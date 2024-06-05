@@ -8,11 +8,44 @@
 import SwiftUI
 
 struct WalkthroughView: View {
+    @State var showModal = false
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack{
+            Image("Illustration")
+                .padding(.vertical, 45)
+            
+            Text("Общайтесь с друзьями и близкими легко")
+                .font(.system(size: 24, weight: .bold))
+                .multilineTextAlignment(.center)
+            
+            Spacer()
+            
+            Button(action: buttonAction, label: {
+                Text("Польззовательское соглашение")
+                    .font(.system(size: 14, weight: .semibold))
+                    .foregroundColor(.primary)
+                    .multilineTextAlignment(.center)
+                    .padding(.bottom, 18)
+            })
+            
+            ButtonView(buttonAction: buttonAction, buttonText: "Начать общаться")
+                .sheet(isPresented: $showModal) {
+                    ModalView(showModal: $showModal)
+                }
+                .padding(.bottom, 20)
+        }
+        .padding(.leading, 40)
+        .padding(.trailing, 40)
+    
+        .background(Color("BackgroundColor"))
+    }
+    
+    private func buttonAction() {
+        showModal.toggle()
     }
 }
 
 #Preview {
-    WalkthroughView()
+    WalkthroughView(showModal: false)
 }

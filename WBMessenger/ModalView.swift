@@ -8,11 +8,23 @@
 import SwiftUI
 
 struct ModalView: View {
+    @Binding var showModal: Bool
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            Spacer()
+            
+            ButtonView(buttonAction: {
+                showModal.toggle()
+            }, buttonText: "Закрыть окно")
+            .padding(.bottom, 20)
+        }
+        .padding(.leading, 40)
+        .padding(.trailing, 40)
+        .background(Color("BackgroundColor"))
     }
 }
 
 #Preview {
-    ModalView()
+    ModalView(showModal: .constant(true))
 }

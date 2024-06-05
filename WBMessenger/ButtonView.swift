@@ -8,11 +8,21 @@
 import SwiftUI
 
 struct ButtonView: View {
+    let buttonAction: () -> Void
+    let buttonText: String
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Button(action: buttonAction) {
+            Text(buttonText)
+                .font(.system(size: 16, weight: .semibold))
+                .frame(width: 327, height: 52)
+                .background(Color(red: 154/255, green: 65/255, blue: 254/255))
+                .foregroundColor(Color.white)
+                .cornerRadius(30)
+        }
     }
 }
 
 #Preview {
-    ButtonView()
+    ButtonView(buttonAction: {}, buttonText: "Начать общаться")
 }
