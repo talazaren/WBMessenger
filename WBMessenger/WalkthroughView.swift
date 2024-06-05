@@ -25,7 +25,6 @@ struct WalkthroughView: View {
                 Text("Польззовательское соглашение")
                     .font(.system(size: 14, weight: .semibold))
                     .foregroundColor(.primary)
-                    .multilineTextAlignment(.center)
                     .padding(.bottom, 18)
             })
             
