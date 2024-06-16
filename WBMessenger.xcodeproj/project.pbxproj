@@ -19,6 +19,9 @@
 		1A2D20BE2C1F193E00F4D6E6 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2D20BD2C1F193E00F4D6E6 /* Contact.swift */; };
 		1A2D20C02C1F195900F4D6E6 /* Contacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2D20BF2C1F195900F4D6E6 /* Contacts.swift */; };
 		1A2D20C32C1F198C00F4D6E6 /* ContactDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2D20C22C1F198C00F4D6E6 /* ContactDetailsView.swift */; };
+		1A2D20C92C1F1DDC00F4D6E6 /* ContentTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2D20C82C1F1DDC00F4D6E6 /* ContentTabView.swift */; };
+		1ABA28732C1F3C1F00A912F2 /* ChatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABA28722C1F3C1F00A912F2 /* ChatsView.swift */; };
+		1ABA28752C1F3C3A00A912F2 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABA28742C1F3C3A00A912F2 /* SettingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +38,9 @@
 		1A2D20BD2C1F193E00F4D6E6 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		1A2D20BF2C1F195900F4D6E6 /* Contacts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contacts.swift; sourceTree = "<group>"; };
 		1A2D20C22C1F198C00F4D6E6 /* ContactDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailsView.swift; sourceTree = "<group>"; };
+		1A2D20C82C1F1DDC00F4D6E6 /* ContentTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentTabView.swift; sourceTree = "<group>"; };
+		1ABA28722C1F3C1F00A912F2 /* ChatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsView.swift; sourceTree = "<group>"; };
+		1ABA28742C1F3C3A00A912F2 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,11 +96,14 @@
 			isa = PBXGroup;
 			children = (
 				1A2D20A52C107DD000F4D6E6 /* ContentView.swift */,
+				1A2D20C82C1F1DDC00F4D6E6 /* ContentTabView.swift */,
 				1A2D20B92C1F190B00F4D6E6 /* ContactsView.swift */,
 				1A2D20C22C1F198C00F4D6E6 /* ContactDetailsView.swift */,
 				1A2D20B12C107E6B00F4D6E6 /* WalkthroughView.swift */,
 				1A2D20B32C107FD400F4D6E6 /* ButtonView.swift */,
 				1A2D20B52C108BF300F4D6E6 /* ModalView.swift */,
+				1ABA28722C1F3C1F00A912F2 /* ChatsView.swift */,
+				1ABA28742C1F3C3A00A912F2 /* SettingsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -193,6 +202,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1ABA28732C1F3C1F00A912F2 /* ChatsView.swift in Sources */,
 				1A2D20C32C1F198C00F4D6E6 /* ContactDetailsView.swift in Sources */,
 				1A2D20A62C107DD000F4D6E6 /* ContentView.swift in Sources */,
 				1A2D20A42C107DD000F4D6E6 /* WBMessengerApp.swift in Sources */,
@@ -201,8 +211,10 @@
 				1A2D20BC2C1F191A00F4D6E6 /* Router.swift in Sources */,
 				1A2D20BE2C1F193E00F4D6E6 /* Contact.swift in Sources */,
 				1A2D20BA2C1F190B00F4D6E6 /* ContactsView.swift in Sources */,
+				1A2D20C92C1F1DDC00F4D6E6 /* ContentTabView.swift in Sources */,
 				1A2D20B22C107E6B00F4D6E6 /* WalkthroughView.swift in Sources */,
 				1A2D20B62C108BF300F4D6E6 /* ModalView.swift in Sources */,
+				1ABA28752C1F3C3A00A912F2 /* SettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

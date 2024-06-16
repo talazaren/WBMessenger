@@ -6,3 +6,14 @@
 //
 
 import Foundation
+
+enum Routes: Hashable {
+    case contacts
+    case chats
+    case settings
+    case contactDetails
+}
+
+final class Router: ObservableObject {
+    @Published var selectedRoute: Routes = .contacts
+}
