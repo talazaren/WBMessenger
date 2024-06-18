@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContactsView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Image("Contacts").renderingMode(/*@START_MENU_TOKEN@*/.template/*@END_MENU_TOKEN@*/).foregroundStyle(.red)
     }
 }
 
