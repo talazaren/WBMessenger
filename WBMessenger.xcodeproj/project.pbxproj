@@ -23,6 +23,9 @@
 		1ABA28732C1F3C1F00A912F2 /* ChatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABA28722C1F3C1F00A912F2 /* ChatsView.swift */; };
 		1ABA28752C1F3C3A00A912F2 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABA28742C1F3C3A00A912F2 /* SettingsView.swift */; };
 		1ADBEE732C21AAB4009F7A81 /* Date + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ADBEE722C21AAB4009F7A81 /* Date + Ext.swift */; };
+		1ADBEE762C21BAFD009F7A81 /* ContactRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ADBEE752C21BAFD009F7A81 /* ContactRowView.swift */; };
+		1ADBEE7A2C2202D6009F7A81 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ADBEE792C2202D6009F7A81 /* SearchBarView.swift */; };
+		1ADBEE7C2C220CF8009F7A81 /* View + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ADBEE7B2C220CF8009F7A81 /* View + Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +46,9 @@
 		1ABA28722C1F3C1F00A912F2 /* ChatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsView.swift; sourceTree = "<group>"; };
 		1ABA28742C1F3C3A00A912F2 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		1ADBEE722C21AAB4009F7A81 /* Date + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date + Ext.swift"; sourceTree = "<group>"; };
+		1ADBEE752C21BAFD009F7A81 /* ContactRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactRowView.swift; sourceTree = "<group>"; };
+		1ADBEE792C2202D6009F7A81 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
+		1ADBEE7B2C220CF8009F7A81 /* View + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View + Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +113,8 @@
 				1A2D20B52C108BF300F4D6E6 /* ModalView.swift */,
 				1ABA28722C1F3C1F00A912F2 /* ChatsView.swift */,
 				1ABA28742C1F3C3A00A912F2 /* SettingsView.swift */,
+				1ADBEE752C21BAFD009F7A81 /* ContactRowView.swift */,
+				1ADBEE792C2202D6009F7A81 /* SearchBarView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -139,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				1ADBEE722C21AAB4009F7A81 /* Date + Ext.swift */,
+				1ADBEE7B2C220CF8009F7A81 /* View + Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -217,10 +226,13 @@
 				1A2D20C32C1F198C00F4D6E6 /* ContactDetailsView.swift in Sources */,
 				1A2D20A62C107DD000F4D6E6 /* ContentView.swift in Sources */,
 				1A2D20A42C107DD000F4D6E6 /* WBMessengerApp.swift in Sources */,
+				1ADBEE7A2C2202D6009F7A81 /* SearchBarView.swift in Sources */,
+				1ADBEE762C21BAFD009F7A81 /* ContactRowView.swift in Sources */,
 				1A2D20C02C1F195900F4D6E6 /* Contacts.swift in Sources */,
 				1ADBEE732C21AAB4009F7A81 /* Date + Ext.swift in Sources */,
 				1A2D20B42C107FD400F4D6E6 /* ButtonView.swift in Sources */,
 				1A2D20BC2C1F191A00F4D6E6 /* Router.swift in Sources */,
+				1ADBEE7C2C220CF8009F7A81 /* View + Ext.swift in Sources */,
 				1A2D20BE2C1F193E00F4D6E6 /* Contact.swift in Sources */,
 				1A2D20BA2C1F190B00F4D6E6 /* ContactsView.swift in Sources */,
 				1A2D20C92C1F1DDC00F4D6E6 /* ContentTabView.swift in Sources */,

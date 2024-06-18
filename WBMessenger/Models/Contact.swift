@@ -7,22 +7,22 @@
 
 import Foundation
 
-struct Contact {
+struct Contact: Identifiable, Hashable {
     let id = UUID()
     let name: String
-    let surname: String
-    let avatar: String
-    let phoneNumber: Int
+    let surname: String?
+    let avatar: String?
+    let phoneNumber: String
     let onlineStatus: Date
     let haveStories: Bool
     let socialMediaLinks: [SocialMedia]
     
     var fullname: String {
-        "\(name) \(surname)"
+        "\(name) \(surname ?? "")"
     }
     
     var onlineStatusMessage: String {
-        let timeDifference = Calendar.current.dateComponents([.minute, .hour, .day], from: onlineStatus, to: Date())
+        let timeDifference = Calendar.current.dateComponents([.second], from: onlineStatus, to: Date())
         guard let seconds = timeDifference.second else { return "error" }
         
         switch seconds {
@@ -41,6 +41,13 @@ struct Contact {
         }
     }
     
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
+           
+    static func == (lhs: Contact, rhs: Contact) -> Bool {
+        return lhs.id == rhs.id
+    }
 }
 
 struct SocialMedia {
