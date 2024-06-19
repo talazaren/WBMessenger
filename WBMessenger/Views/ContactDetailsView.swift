@@ -32,6 +32,8 @@ struct ContactDetailsView: View {
                 .padding(.top, 40)
         }
         .padding(.top, 46)
+        .padding([.leading, .trailing], 100)
+        .background(Color("BackgroundColor"))
         .navigationBarBackButtonHidden(true)
         .toolbar {
             ToolbarItem(placement: .navigationBarLeading) {
@@ -61,9 +63,7 @@ struct ContactDetailsView: View {
             }
         }
         Spacer()
-        
     }
-        
 }
 
 struct ProfileImageView: View {

@@ -26,6 +26,7 @@
 		1ADBEE762C21BAFD009F7A81 /* ContactRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ADBEE752C21BAFD009F7A81 /* ContactRowView.swift */; };
 		1ADBEE7A2C2202D6009F7A81 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ADBEE792C2202D6009F7A81 /* SearchBarView.swift */; };
 		1ADBEE7C2C220CF8009F7A81 /* View + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ADBEE7B2C220CF8009F7A81 /* View + Ext.swift */; };
+		1ADBEE7F2C22D6D7009F7A81 /* ViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ADBEE7E2C22D6D7009F7A81 /* ViewModifier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,7 @@
 		1ADBEE752C21BAFD009F7A81 /* ContactRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactRowView.swift; sourceTree = "<group>"; };
 		1ADBEE792C2202D6009F7A81 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
 		1ADBEE7B2C220CF8009F7A81 /* View + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View + Ext.swift"; sourceTree = "<group>"; };
+		1ADBEE7E2C22D6D7009F7A81 /* ViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 		1A2D20A22C107DD000F4D6E6 /* WBMessenger */ = {
 			isa = PBXGroup;
 			children = (
+				1ADBEE7D2C22D6BD009F7A81 /* Modifiers */,
 				1ADBEE742C21AB09009F7A81 /* Extensions */,
 				1A2D20A32C107DD000F4D6E6 /* WBMessengerApp.swift */,
 				1A2D20C12C1F196100F4D6E6 /* Views */,
@@ -150,6 +153,14 @@
 				1ADBEE7B2C220CF8009F7A81 /* View + Ext.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		1ADBEE7D2C22D6BD009F7A81 /* Modifiers */ = {
+			isa = PBXGroup;
+			children = (
+				1ADBEE7E2C22D6D7009F7A81 /* ViewModifier.swift */,
+			);
+			path = Modifiers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -223,6 +234,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1ABA28732C1F3C1F00A912F2 /* ChatsView.swift in Sources */,
+				1ADBEE7F2C22D6D7009F7A81 /* ViewModifier.swift in Sources */,
 				1A2D20C32C1F198C00F4D6E6 /* ContactDetailsView.swift in Sources */,
 				1A2D20A62C107DD000F4D6E6 /* ContentView.swift in Sources */,
 				1A2D20A42C107DD000F4D6E6 /* WBMessengerApp.swift in Sources */,

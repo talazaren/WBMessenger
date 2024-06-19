@@ -66,7 +66,7 @@ struct AvatarView: View {
                 .frame(width: 48, height: 48)
                 .overlay(
                     RoundedRectangle(cornerRadius: 14)
-                    .stroke(Color.white, lineWidth: 2)
+                    .stroke(Color("BackgroundColor"), lineWidth: 2)
                 )
             )
         } else {
@@ -77,7 +77,7 @@ struct AvatarView: View {
             return AnyView(
                 RoundedRectangle(cornerRadius: 16)
                     .fill(Color("ActiveColor"))
-                    .stroke(Color.white, lineWidth: 2)
+                    .stroke(Color("BackgroundColor"), lineWidth: 2)
                     .frame(width: 48, height: 48)
                     .overlay(
                         Text(initials)

@@ -29,6 +29,7 @@ struct ContactsView: View {
                 List(filteredContacts, id: \.self) { contact in
                     ContactRowView(contact: contact)
                         .listRowBackground(Color("BackgroundColor"))
+                        .listRowSeparatorTint(Color("InputColor"))
                         .alignmentGuide(.listRowSeparatorLeading) { _ in 0 }
                         .alignmentGuide(.listRowSeparatorTrailing) { separator in
                             separator.width - 2
@@ -41,9 +42,12 @@ struct ContactsView: View {
                 .listStyle(.plain)
                 .navigationDestination(for: Contact.self) { contact in
                     ContactDetailsView(contact: contact)
+                        .background(Color("BackgroundColor"))
+                    
                 }
                 
             }
+            .background(Color("BackgroundColor"))
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Text("Контакты")
@@ -54,12 +58,12 @@ struct ContactsView: View {
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button(action: {
-                        // action()
+                        
                     }) {
                         Image(systemName: "plus")
                             .resizable()
                             .frame(width: 14, height: 14)
-                            .tint(Color("TextColor"))
+                            .foregroundStyle(Color("TextColor"))
                             .padding(.trailing, 8)
                             .padding(.bottom, 13)
                     }

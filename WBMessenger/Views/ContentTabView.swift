@@ -14,20 +14,19 @@ struct ContentTabView: View {
         TabView(selection: $router.selectedRoute) {
             ContactsView().tabItem { 
                 Image("Contacts")
-                    .renderingMode(router.selectedRoute == .contacts ? .template : .original)
+                    .renderingMode(.template)
             }.tag(Route.contacts)
             ChatsView().tabItem {
                 Image("Chats")
-                    .renderingMode(router.selectedRoute == .chats ? .template : .original)
+                    .renderingMode(.template)
             }.tag(Route.chats)
             SettingsView().tabItem {
                 Image("Settings")
-                    .renderingMode(router.selectedRoute == .settings ? .template : .original)
+                    .renderingMode(.template)
             }.tag(Route.settings)
         }
-        .tint(Color("ActiveColor"))
+        .modifier(CustomTabBarStyle(activeColor: Color("ActiveColor"), inactiveColor: Color("TextColor")))
         .toolbarBackground(.visible, for: .tabBar)
-        .background(Color("BackgroundColor"))
         .shadow(color: Color.black.opacity(0.04), radius: 24, x: 0, y: 1)
     }
 }
