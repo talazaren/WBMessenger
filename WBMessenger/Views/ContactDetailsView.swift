@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ContactDetailsView: View {
+    @Environment(\.dismiss) private var dismiss
     let contact: Contact
     
     var body: some View {
@@ -31,7 +32,36 @@ struct ContactDetailsView: View {
                 .padding(.top, 40)
         }
         .padding(.top, 46)
+        .navigationBarBackButtonHidden(true)
+        .toolbar {
+            ToolbarItem(placement: .navigationBarLeading) {
+                Button(action: {
+                    dismiss()
+                }) {
+                    HStack {
+                        Image("Back")
+                            .resizable()
+                            .frame(width: 24, height: 24)
+                            .foregroundStyle(Color("TextColor"))
+                        Text("Профиль")
+                            .font(.system(size: 18, weight: .semibold))
+                            .foregroundStyle(Color("TextColor"))
+                    }
+                }
+            }
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button(action: {
+                   
+                }) {
+                    Image("Pen")
+                        .resizable()
+                        .frame(width: 24, height: 24)
+                        .foregroundStyle(Color("TextColor"))
+                }
+            }
+        }
         Spacer()
+        
     }
         
 }
