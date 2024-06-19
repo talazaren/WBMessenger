@@ -11,22 +11,60 @@ struct ContentTabView: View {
     @EnvironmentObject var router: Router
     
     var body: some View {
-        TabView(selection: $router.selectedRoute) {
-            ContactsView().tabItem {
-                Image("Contacts")
-                    .renderingMode(.template)
-            }.tag(Route.contacts)
-            ChatsView().tabItem {
-                Image("Chats")
-                    .renderingMode(.template)
-            }.tag(Route.chats)
-            SettingsView().tabItem {
-                Image("Settings")
-                    .renderingMode(.template)
-            }.tag(Route.settings)
+        ZStack(alignment: .bottom) {
+            VStack(spacing: 0) {
+                Spacer()
+                switch router.selectedRoute {
+                case .contacts:
+                    ContactsView()
+                case .chats:
+                    ChatsView()
+                case .settings:
+                    SettingsView()
+                }
+                Spacer()
+            }
+            CustomTabBarView()
         }
-        .modifier(CustomTabBarStyle(activeColor: Color("ActiveColor"), inactiveColor: Color("TextColor")))
-        .toolbarBackground(.visible, for: .tabBar)
-        .shadow(color: Color.black.opacity(0.04), radius: 24, x: 0, y: 1)
+        .ignoresSafeArea(.container)
+    }
+}
+
+struct CustomTabBarView: View {
+    @EnvironmentObject var router: Router
+    
+    var body: some View {
+        HStack {
+            TabItemView(screen: .contacts, icon: "Contacts")
+            Spacer()
+            TabItemView(screen: .chats, icon: "Chats")
+            Spacer()
+            TabItemView(screen: .settings, icon: "Settings")
+        }
+        .padding(.horizontal, 30)
+        .padding(.bottom, 40)
+        .padding(.top, 20)
+        .background(
+            Color("BackgroundColor").shadow(color: .black.opacity(0.04), radius: 24, x: -1)
+        )
+    }
+}
+        
+struct TabItemView: View {
+    @EnvironmentObject var router: Router
+    let screen: Route
+    let icon: String
+    
+    var body: some View {
+        Button(action: {
+            router.selectedRoute = screen
+        }, label: {
+            Image(icon)
+                .renderingMode(.template)
+                .resizable()
+                .frame(width: 32, height: 32)
+                .foregroundStyle(router.selectedRoute == screen ? Color("ActiveColor") : Color("TextColor"))
+            }
+        )
     }
 }
