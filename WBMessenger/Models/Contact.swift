@@ -50,7 +50,7 @@ struct Contact: Identifiable, Hashable {
     }
 }
 
-struct SocialMedia {
+struct SocialMedia: Hashable {
     let name: SocialMediaName
     let link: String
     let image: String

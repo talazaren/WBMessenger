@@ -34,12 +34,14 @@ struct ContactsView: View {
                             separator.width - 2
                         }
                         .padding(5)
-                        .background(
-                            NavigationLink(destination: ContactDetailsView(contact: contact)) {}
-                                .opacity(0)
-                        )
+                        .onTapGesture {
+                            path.append(contact)
+                        }
                 }
                 .listStyle(.plain)
+                .navigationDestination(for: Contact.self) { contact in
+                    ContactDetailsView(contact: contact)
+                }
                 
             }
             .toolbar {
