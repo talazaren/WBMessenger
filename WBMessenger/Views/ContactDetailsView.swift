@@ -42,6 +42,7 @@ struct ContactDetailsView: View {
                 }) {
                     HStack {
                         Image("Back")
+                            .renderingMode(.template)
                             .resizable()
                             .frame(width: 24, height: 24)
                             .foregroundStyle(Color("TextColor"))
@@ -56,6 +57,7 @@ struct ContactDetailsView: View {
                    
                 }) {
                     Image("Pen")
+                        .renderingMode(.template)
                         .resizable()
                         .frame(width: 24, height: 24)
                         .foregroundStyle(Color("TextColor"))
@@ -76,9 +78,16 @@ struct ProfileImageView: View {
                 .frame(width: 200, height: 200)
                 .clipShape(Circle())
         } else {
-            Image("Avatar")
-                .resizable()
-                .frame(width: 200, height: 200)
+            ZStack{
+                Circle()
+                    .frame(width: 200, height: 200)
+                    .foregroundStyle(Color("InputColor"))
+                Image("Avatar")
+                    .renderingMode(.template)
+                    .resizable()
+                    .frame(width: 112, height: 112)
+                    .foregroundStyle(Color("TextColor"))
+            }
         }
     }
 }
