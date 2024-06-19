@@ -12,7 +12,7 @@ struct ContentTabView: View {
     
     var body: some View {
         TabView(selection: $router.selectedRoute) {
-            ContactsView().tabItem { 
+            ContactsView().tabItem {
                 Image("Contacts")
                     .renderingMode(.template)
             }.tag(Route.contacts)
