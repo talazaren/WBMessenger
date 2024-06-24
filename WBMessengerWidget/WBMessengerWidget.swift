@@ -11,6 +11,7 @@ import AppIntents
 
 struct Provider: AppIntentTimelineProvider {
     let contacts = Contacts.shared
+    var showOnlineContacts: Bool = false
     
     func placeholder(in context: Context) -> SimpleEntry {
         SimpleEntry(date: Date(), contacts: contacts.contacts, currentIndex: contacts.currentIndex)
@@ -21,12 +22,20 @@ struct Provider: AppIntentTimelineProvider {
     }
     
     func timeline(for configuration: ConfigurationAppIntent, in context: Context) async -> Timeline<SimpleEntry> {
+        var filteredContacts: [Contact] {
+            if showOnlineContacts {
+                return contacts.contacts.filter { $0.onlineStatusMessage == "Online" }
+            } else {
+                return contacts.contacts
+            }
+        }
+        
         var entries: [SimpleEntry] = []
         
         let currentDate = Date()
-        for hourOffset in 0 ..< 5 {
-            let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
-            let entry = SimpleEntry(date: entryDate, contacts: contacts.contacts, currentIndex: contacts.currentIndex)
+        for secondOffset in 0 ..< 10 {
+            let entryDate = Calendar.current.date(byAdding: .second, value: secondOffset, to: currentDate)!
+            let entry = SimpleEntry(date: entryDate, contacts: filteredContacts, currentIndex: contacts.currentIndex)
             entries.append(entry)
         }
 
@@ -42,9 +51,10 @@ struct SimpleEntry: TimelineEntry {
 
 struct WBMessengerWidgetEntryView : View {
     var entry: Provider.Entry
+    @State private var showOnlineContacts = false
 
     var body: some View {
-            VStack(alignment: .leading) {
+            VStack(alignment: .center) {
                 HStack(spacing: 4) {
                     Image(systemName: "person.2.fill")
                     Text("Контакты")
@@ -58,7 +68,7 @@ struct WBMessengerWidgetEntryView : View {
                     }
                     .background(
                         Capsule()
-                            .foregroundStyle(.black)
+                            .foregroundStyle(Color("LightPurple"))
                     )
                     
                     AvatarView(contact: entry.contacts[entry.currentIndex])
@@ -66,10 +76,22 @@ struct WBMessengerWidgetEntryView : View {
                     Button(intent: ShowNextContactIntent(currentIndex: (entry.currentIndex + 1) % entry.contacts.count)) {
                         Image(systemName: "chevron.right")
                     }
+                    .background(
+                        Capsule()
+                            .foregroundStyle(Color("LightPurple"))
+                    )
                 }
                 
-                Text("Time:")
-                Text(entry.date, style: .time)
+                Button(action: {
+                    showOnlineContacts.toggle()
+                }) {
+                    Text(showOnlineContacts ? "Все" : "Онлайн")
+                }
+                .background(
+                    Capsule()
+                        .foregroundStyle(Color("DarkPurple"))
+                )
+                
                 Spacer()
             }
             .foregroundStyle(.white)
