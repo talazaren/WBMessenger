@@ -34,6 +34,11 @@
 		1ADBEED72C29D074009F7A81 /* AppIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ADBEED62C29D074009F7A81 /* AppIntent.swift */; };
 		1ADBEED92C29D075009F7A81 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1ADBEED82C29D075009F7A81 /* Assets.xcassets */; };
 		1ADBEEDD2C29D075009F7A81 /* WBMessengerWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 1ADBEEC92C29D074009F7A81 /* WBMessengerWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		1ADBEEE22C29D53E009F7A81 /* Contacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2D20BF2C1F195900F4D6E6 /* Contacts.swift */; };
+		1ADBEEE32C29D543009F7A81 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2D20BD2C1F193E00F4D6E6 /* Contact.swift */; };
+		1ADBEEE42C29D547009F7A81 /* Date + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ADBEE722C21AAB4009F7A81 /* Date + Ext.swift */; };
+		1ADBEEE52C29D555009F7A81 /* ContactRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ADBEE752C21BAFD009F7A81 /* ContactRowView.swift */; };
+		1ADBEEE62C29E0F3009F7A81 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A2D20A72C107DD100F4D6E6 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -333,6 +338,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1ADBEEE62C29E0F3009F7A81 /* Assets.xcassets in Resources */,
 				1ADBEED92C29D075009F7A81 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -368,10 +374,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1ADBEEE32C29D543009F7A81 /* Contact.swift in Sources */,
 				1ADBEED52C29D074009F7A81 /* WBMessengerWidget.swift in Sources */,
 				1ADBEED72C29D074009F7A81 /* AppIntent.swift in Sources */,
 				1ADBEED12C29D074009F7A81 /* WBMessengerWidgetBundle.swift in Sources */,
 				1ADBEED32C29D074009F7A81 /* WBMessengerWidgetLiveActivity.swift in Sources */,
+				1ADBEEE42C29D547009F7A81 /* Date + Ext.swift in Sources */,
+				1ADBEEE52C29D555009F7A81 /* ContactRowView.swift in Sources */,
+				1ADBEEE22C29D53E009F7A81 /* Contacts.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

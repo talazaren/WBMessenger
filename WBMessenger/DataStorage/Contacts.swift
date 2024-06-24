@@ -10,6 +10,8 @@ import Foundation
 final class Contacts {
     static let shared = Contacts()
     
+    var currentIndex = 0
+    
     let contacts: [Contact] = [
         Contact(
             name: "Анастасия",
