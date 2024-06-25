@@ -22,9 +22,10 @@ struct Provider: AppIntentTimelineProvider {
     
     func timeline(for configuration: ConfigurationAppIntent, in context: Context) async -> Timeline<SimpleEntry> {
         var filteredContacts: [Contact] {
-            if contacts.showOnlineContacts {
-                return contacts.contacts.filter { $0.onlineStatusMessage == "Online" }
-            } else {
+            switch contacts.showOnlineContacts {
+            case true:
+                return contacts.onlineContacts
+            default:
                 return contacts.contacts
             }
         }
@@ -61,26 +62,27 @@ struct WBMessengerWidgetEntryView : View {
                 }
                 .font(.system(size: 17, weight: .bold))
                 
-                if entry.contacts.isEmpty {
+                switch entry.contacts.isEmpty {
+                case true: 
                     Text("no one")
-                } else {
+                default: 
                     HStack(spacing: 4) {
-                        Button(intent: ShowPreviousContactIntent(currentIndex: (entry.currentIndex - 1 + entry.contacts.count) % entry.contacts.count)) {
+                        Button(intent: ShowPreviousContactIntent(currentIndex:  (entry.currentIndex - 1 + entry.contacts.count) %   entry.contacts.count)) {
                             Image(systemName: "chevron.left")
                         }
                         .background(
                             Capsule()
                                 .foregroundStyle(Color("LightPurple"))
                         )
-                        
+                    
                         AvatarView(contact: entry.contacts[entry.currentIndex])
-                        
-                        Button(intent: ShowNextContactIntent(currentIndex: (entry.currentIndex + 1) % entry.contacts.count)) {
+                    
+                        Button(intent: ShowNextContactIntent(currentIndex:  (entry.currentIndex + 1) % entry.contacts.count)) {
                             Image(systemName: "chevron.right")
                         }
                         .background(
-                            Capsule()
-                                .foregroundStyle(Color("LightPurple"))
+                         Capsule()
+                             .foregroundStyle(Color("LightPurple"))
                         )
                     }
                 }

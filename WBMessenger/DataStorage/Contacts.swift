@@ -10,8 +10,14 @@ import Foundation
 final class Contacts {
     static let shared = Contacts()
     
+    private let appWasOpen = Date()
+    
     var currentIndex = 0
     var showOnlineContacts = false
+    
+    var onlineContacts: [Contact] {
+        contacts.filter { $0.onlineStatus >= appWasOpen.addingTimeInterval(-10) }
+    }
     
     let contacts: [Contact] = [
         Contact(

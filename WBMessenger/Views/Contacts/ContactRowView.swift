@@ -37,12 +37,13 @@ struct ContactRowView: View {
 
 struct AvatarView: View {
     let contact: Contact
+    let contacts = Contacts.shared
     
     var body: some View {
         ZStack {
             contact.haveStories ? setStories() : nil
             setImage()
-            contact.onlineStatusMessage == "Online" ? setStatus().position(x: 48, y: 6) : nil
+            contacts.onlineContacts.contains(contact) ? setStatus().position(x: 48, y: 6) : nil
                 
             
         }
