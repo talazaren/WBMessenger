@@ -54,3 +54,13 @@ struct ShowPreviousContactIntent: AppIntent {
         return .result()
     }
 }
+
+struct ShowOnlineContacts: AppIntent {
+    static var title: LocalizedStringResource = "Show Online Contact"
+    static var description = IntentDescription("Show only online contacts.")
+    
+    func perform() async throws -> some IntentResult {
+        Contacts.shared.showOnlineContacts.toggle()
+        return .result()
+    }
+}

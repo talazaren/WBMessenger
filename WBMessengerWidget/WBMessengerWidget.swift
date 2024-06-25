@@ -11,19 +11,18 @@ import AppIntents
 
 struct Provider: AppIntentTimelineProvider {
     let contacts = Contacts.shared
-    var showOnlineContacts: Bool = false
     
     func placeholder(in context: Context) -> SimpleEntry {
-        SimpleEntry(date: Date(), contacts: contacts.contacts, currentIndex: contacts.currentIndex)
+        SimpleEntry(date: Date(), contacts: contacts.contacts, currentIndex: contacts.currentIndex, showOnlineContacts: contacts.showOnlineContacts)
     }
 
     func snapshot(for configuration: ConfigurationAppIntent, in context: Context) async -> SimpleEntry {
-        SimpleEntry(date: Date(), contacts: contacts.contacts, currentIndex: contacts.currentIndex)
+        SimpleEntry(date: Date(), contacts: contacts.contacts, currentIndex: contacts.currentIndex, showOnlineContacts: contacts.showOnlineContacts)
     }
     
     func timeline(for configuration: ConfigurationAppIntent, in context: Context) async -> Timeline<SimpleEntry> {
         var filteredContacts: [Contact] {
-            if showOnlineContacts {
+            if contacts.showOnlineContacts {
                 return contacts.contacts.filter { $0.onlineStatusMessage == "Online" }
             } else {
                 return contacts.contacts
@@ -35,7 +34,7 @@ struct Provider: AppIntentTimelineProvider {
         let currentDate = Date()
         for secondOffset in 0 ..< 10 {
             let entryDate = Calendar.current.date(byAdding: .second, value: secondOffset, to: currentDate)!
-            let entry = SimpleEntry(date: entryDate, contacts: filteredContacts, currentIndex: contacts.currentIndex)
+            let entry = SimpleEntry(date: entryDate, contacts: filteredContacts, currentIndex: contacts.currentIndex, showOnlineContacts: contacts.showOnlineContacts)
             entries.append(entry)
         }
 
@@ -47,11 +46,11 @@ struct SimpleEntry: TimelineEntry {
     let date: Date
     let contacts: [Contact]
     let currentIndex: Int
+    let showOnlineContacts: Bool
 }
 
 struct WBMessengerWidgetEntryView : View {
     var entry: Provider.Entry
-    @State private var showOnlineContacts = false
 
     var body: some View {
             VStack(alignment: .center) {
@@ -62,30 +61,34 @@ struct WBMessengerWidgetEntryView : View {
                 }
                 .font(.system(size: 17, weight: .bold))
                 
-                HStack(spacing: 4) {
-                    Button(intent: ShowPreviousContactIntent(currentIndex: (entry.currentIndex - 1 + entry.contacts.count) % entry.contacts.count)) {
-                        Image(systemName: "chevron.left")
-                    }
-                    .background(
-                        Capsule()
-                            .foregroundStyle(Color("LightPurple"))
-                    )
-                    
-                    AvatarView(contact: entry.contacts[entry.currentIndex])
+                if entry.contacts.isEmpty {
+                    Text("no one")
+                } else {
+                    HStack(spacing: 4) {
+                        Button(intent: ShowPreviousContactIntent(currentIndex: (entry.currentIndex - 1 + entry.contacts.count) % entry.contacts.count)) {
+                            Image(systemName: "chevron.left")
+                        }
+                        .background(
+                            Capsule()
+                                .foregroundStyle(Color("LightPurple"))
+                        )
                         
-                    Button(intent: ShowNextContactIntent(currentIndex: (entry.currentIndex + 1) % entry.contacts.count)) {
-                        Image(systemName: "chevron.right")
+                        AvatarView(contact: entry.contacts[entry.currentIndex])
+                        
+                        Button(intent: ShowNextContactIntent(currentIndex: (entry.currentIndex + 1) % entry.contacts.count)) {
+                            Image(systemName: "chevron.right")
+                        }
+                        .background(
+                            Capsule()
+                                .foregroundStyle(Color("LightPurple"))
+                        )
                     }
-                    .background(
-                        Capsule()
-                            .foregroundStyle(Color("LightPurple"))
-                    )
                 }
                 
-                Button(action: {
-                    showOnlineContacts.toggle()
-                }) {
-                    Text(showOnlineContacts ? "Все" : "Онлайн")
+                Button(intent:
+                    ShowOnlineContacts()
+                ) {
+                    Text(entry.showOnlineContacts ? "Все" : "Онлайн")
                 }
                 .background(
                     Capsule()
@@ -121,6 +124,6 @@ struct WBMessengerWidget: Widget {
 #Preview(as: .systemSmall) {
     WBMessengerWidget()
 } timeline: {
-    SimpleEntry(date: .now, contacts: Contacts.shared.contacts, currentIndex: 0)
-    SimpleEntry(date: .now, contacts: Contacts.shared.contacts, currentIndex: 0)
+    SimpleEntry(date: .now, contacts: Contacts.shared.contacts, currentIndex: 0, showOnlineContacts: Contacts.shared.showOnlineContacts)
+    SimpleEntry(date: .now, contacts: Contacts.shared.contacts, currentIndex: 0, showOnlineContacts: Contacts.shared.showOnlineContacts)
 }

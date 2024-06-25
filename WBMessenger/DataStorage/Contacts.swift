@@ -11,6 +11,7 @@ final class Contacts {
     static let shared = Contacts()
     
     var currentIndex = 0
+    var showOnlineContacts = false
     
     let contacts: [Contact] = [
         Contact(
