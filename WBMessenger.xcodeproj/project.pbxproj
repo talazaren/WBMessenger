@@ -49,6 +49,7 @@
 		1ADBEE752C21BAFD009F7A81 /* ContactRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactRowView.swift; sourceTree = "<group>"; };
 		1ADBEE792C2202D6009F7A81 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
 		1ADBEE7B2C220CF8009F7A81 /* View + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View + Ext.swift"; sourceTree = "<group>"; };
+		1ADBEEE82C2C1BFD009F7A81 /* Bank.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Bank.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +82,7 @@
 		1A2D20A22C107DD000F4D6E6 /* WBMessenger */ = {
 			isa = PBXGroup;
 			children = (
+				1ADBEEE72C2C1BD5009F7A81 /* Bank */,
 				1A2D20A32C107DD000F4D6E6 /* WBMessengerApp.swift */,
 				1ADBEE742C21AB09009F7A81 /* Extensions */,
 				1A2D20C12C1F196100F4D6E6 /* Views */,
@@ -166,6 +168,14 @@
 				1A2D20B32C107FD400F4D6E6 /* ButtonView.swift */,
 			);
 			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		1ADBEEE72C2C1BD5009F7A81 /* Bank */ = {
+			isa = PBXGroup;
+			children = (
+				1ADBEEE82C2C1BFD009F7A81 /* Bank.playground */,
+			);
+			path = Bank;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
