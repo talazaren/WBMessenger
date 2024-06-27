@@ -2,7 +2,7 @@ import UIKit
 
 
 
-class BankAccount {
+final class BankAccount {
     //Соблюдаем инкапсуляцию свойства
     private let number = UUID()
     var accountNumber: UUID {
@@ -33,7 +33,7 @@ class BankAccount {
     }
 }
 
-class Bank {
+final class Bank {
     var accounts: [BankAccount] = []
     
     func addAccount() -> BankAccount {
