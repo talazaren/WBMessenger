@@ -80,13 +80,13 @@ struct DateView: View {
                             }
                         }
                     )) {
-                        Text(formatDate(for: day))
+                        Text(formatDate(for: day, isSpellOut: true))
                             .foregroundStyle(Color.accentColor)
                     } label: {
                         HStack {
                             Text(day.localizedName(for: selectedLanguage))
                             Spacer()
-                            Text(formatDate(for: day))
+                            Text(formatDate(for: day, isSpellOut: false))
                         }
                     }
                 }
@@ -108,14 +108,14 @@ struct DateView: View {
         }
     }
     
-    func formatDate(for day: DayLocalization) -> String {
+    func formatDate(for day: DayLocalization, isSpellOut: Bool) -> String {
         let calendar = Calendar.current
         let offset = localizedDays.firstIndex(where: { $0.id == day.id })! - 2
         let newDate = calendar.date(byAdding: .day, value: offset, to: date)!
-        let formatter = DateFormatter()
-        formatter.dateStyle = .long
-        formatter.locale = selectedLanguage.locale
-        return formatter.string(from: newDate)
+        if isSpellOut {
+            return "\(dateFormatSpellOut: newDate, for: selectedLanguage.locale)"
+        }
+        return "\(dateFormat: newDate, for: selectedLanguage.locale)"
     }
 }
 
