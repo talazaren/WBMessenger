@@ -20,6 +20,9 @@
 		1A2D20C02C1F195900F4D6E6 /* Contacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2D20BF2C1F195900F4D6E6 /* Contacts.swift */; };
 		1A2D20C32C1F198C00F4D6E6 /* ContactDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2D20C22C1F198C00F4D6E6 /* ContactDetailsView.swift */; };
 		1A2D20C92C1F1DDC00F4D6E6 /* ContentTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2D20C82C1F1DDC00F4D6E6 /* ContentTabView.swift */; };
+		1A85BE812C30335300D3EAA8 /* DateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A85BE802C30335300D3EAA8 /* DateView.swift */; };
+		1A85BE832C30401200D3EAA8 /* String + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A85BE822C30401200D3EAA8 /* String + Ext.swift */; };
+		1A85BE852C304C0800D3EAA8 /* DateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A85BE842C304C0800D3EAA8 /* DateModel.swift */; };
 		1ABA28732C1F3C1F00A912F2 /* ChatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABA28722C1F3C1F00A912F2 /* ChatsView.swift */; };
 		1ABA28752C1F3C3A00A912F2 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABA28742C1F3C3A00A912F2 /* SettingsView.swift */; };
 		1ADBEE732C21AAB4009F7A81 /* Date + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ADBEE722C21AAB4009F7A81 /* Date + Ext.swift */; };
@@ -43,6 +46,9 @@
 		1A2D20BF2C1F195900F4D6E6 /* Contacts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contacts.swift; sourceTree = "<group>"; };
 		1A2D20C22C1F198C00F4D6E6 /* ContactDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailsView.swift; sourceTree = "<group>"; };
 		1A2D20C82C1F1DDC00F4D6E6 /* ContentTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentTabView.swift; sourceTree = "<group>"; };
+		1A85BE802C30335300D3EAA8 /* DateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateView.swift; sourceTree = "<group>"; };
+		1A85BE822C30401200D3EAA8 /* String + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + Ext.swift"; sourceTree = "<group>"; };
+		1A85BE842C304C0800D3EAA8 /* DateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateModel.swift; sourceTree = "<group>"; };
 		1ABA28722C1F3C1F00A912F2 /* ChatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsView.swift; sourceTree = "<group>"; };
 		1ABA28742C1F3C3A00A912F2 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		1ADBEE722C21AAB4009F7A81 /* Date + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date + Ext.swift"; sourceTree = "<group>"; };
@@ -81,6 +87,7 @@
 		1A2D20A22C107DD000F4D6E6 /* WBMessenger */ = {
 			isa = PBXGroup;
 			children = (
+				1A85BE7F2C30330B00D3EAA8 /* DatePicker */,
 				1A2D20A32C107DD000F4D6E6 /* WBMessengerApp.swift */,
 				1ADBEE742C21AB09009F7A81 /* Extensions */,
 				1A2D20C12C1F196100F4D6E6 /* Views */,
@@ -137,6 +144,16 @@
 				1A2D20BF2C1F195900F4D6E6 /* Contacts.swift */,
 			);
 			path = DataStorage;
+			sourceTree = "<group>";
+		};
+		1A85BE7F2C30330B00D3EAA8 /* DatePicker */ = {
+			isa = PBXGroup;
+			children = (
+				1A85BE802C30335300D3EAA8 /* DateView.swift */,
+				1A85BE822C30401200D3EAA8 /* String + Ext.swift */,
+				1A85BE842C304C0800D3EAA8 /* DateModel.swift */,
+			);
+			path = DatePicker;
 			sourceTree = "<group>";
 		};
 		1ADBEE742C21AB09009F7A81 /* Extensions */ = {
@@ -243,7 +260,10 @@
 				1A2D20A62C107DD000F4D6E6 /* ContentView.swift in Sources */,
 				1A2D20A42C107DD000F4D6E6 /* WBMessengerApp.swift in Sources */,
 				1ADBEE7A2C2202D6009F7A81 /* SearchBarView.swift in Sources */,
+				1A85BE852C304C0800D3EAA8 /* DateModel.swift in Sources */,
 				1ADBEE762C21BAFD009F7A81 /* ContactRowView.swift in Sources */,
+				1A85BE812C30335300D3EAA8 /* DateView.swift in Sources */,
+				1A85BE832C30401200D3EAA8 /* String + Ext.swift in Sources */,
 				1A2D20C02C1F195900F4D6E6 /* Contacts.swift in Sources */,
 				1ADBEE732C21AAB4009F7A81 /* Date + Ext.swift in Sources */,
 				1A2D20B42C107FD400F4D6E6 /* ButtonView.swift in Sources */,
