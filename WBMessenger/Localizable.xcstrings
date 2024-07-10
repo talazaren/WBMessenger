@@ -1,0 +1,93 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "and" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "и"
+          }
+        }
+      }
+    },
+    "By clicking continue I agree to" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Нажимая кнопку продолжить я соглашаюсь с"
+          }
+        }
+      }
+    },
+    "Communicate with friends and family easily" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Общайтесь с друзьями и близкими легко"
+          }
+        }
+      }
+    },
+    "Hello!" : {
+
+    },
+    "Privacy Policy" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Политикой Конфиденциальности"
+          }
+        }
+      }
+    },
+    "Search" : {
+
+    },
+    "Start to chat" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Начать общаться"
+          }
+        }
+      }
+    },
+    "Terms of use" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Условиями Использования"
+          }
+        }
+      }
+    },
+    "Terms of Use" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Условиями Использования"
+          }
+        }
+      }
+    },
+    "World!" : {
+
+    },
+    "Контакты" : {
+
+    },
+    "Профиль" : {
+
+    }
+  },
+  "version" : "1.0"
+}
