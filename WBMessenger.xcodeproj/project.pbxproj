@@ -14,6 +14,8 @@
 		1A2D20B22C107E6B00F4D6E6 /* WalkthroughView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2D20B12C107E6B00F4D6E6 /* WalkthroughView.swift */; };
 		1A2D20B42C107FD400F4D6E6 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2D20B32C107FD400F4D6E6 /* ButtonView.swift */; };
 		1A2D20B62C108BF300F4D6E6 /* ModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2D20B52C108BF300F4D6E6 /* ModalView.swift */; };
+		1A5CBF6A2C3E83470073BA02 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 1A5CBF692C3E83470073BA02 /* Localizable.xcstrings */; };
+		1A5CBF6D2C3E8D520073BA02 /* Font+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5CBF6C2C3E8D520073BA02 /* Font+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +27,8 @@
 		1A2D20B12C107E6B00F4D6E6 /* WalkthroughView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughView.swift; sourceTree = "<group>"; };
 		1A2D20B32C107FD400F4D6E6 /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 		1A2D20B52C108BF300F4D6E6 /* ModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalView.swift; sourceTree = "<group>"; };
+		1A5CBF692C3E83470073BA02 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		1A5CBF6C2C3E8D520073BA02 /* Font+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +61,7 @@
 		1A2D20A22C107DD000F4D6E6 /* WBMessenger */ = {
 			isa = PBXGroup;
 			children = (
+				1A5CBF6B2C3E8D3E0073BA02 /* Extensions */,
 				1A2D20A32C107DD000F4D6E6 /* WBMessengerApp.swift */,
 				1A2D20A52C107DD000F4D6E6 /* ContentView.swift */,
 				1A2D20B12C107E6B00F4D6E6 /* WalkthroughView.swift */,
@@ -64,6 +69,7 @@
 				1A2D20B32C107FD400F4D6E6 /* ButtonView.swift */,
 				1A2D20A72C107DD100F4D6E6 /* Assets.xcassets */,
 				1A2D20A92C107DD100F4D6E6 /* Preview Content */,
+				1A5CBF692C3E83470073BA02 /* Localizable.xcstrings */,
 			);
 			path = WBMessenger;
 			sourceTree = "<group>";
@@ -74,6 +80,14 @@
 				1A2D20AA2C107DD100F4D6E6 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		1A5CBF6B2C3E8D3E0073BA02 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				1A5CBF6C2C3E8D520073BA02 /* Font+.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -118,6 +132,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = 1A2D20972C107DD000F4D6E6;
 			productRefGroup = 1A2D20A12C107DD000F4D6E6 /* Products */;
@@ -136,6 +151,7 @@
 			files = (
 				1A2D20AB2C107DD100F4D6E6 /* Preview Assets.xcassets in Resources */,
 				1A2D20A82C107DD100F4D6E6 /* Assets.xcassets in Resources */,
+				1A5CBF6A2C3E83470073BA02 /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,6 +162,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A5CBF6D2C3E8D520073BA02 /* Font+.swift in Sources */,
 				1A2D20A62C107DD000F4D6E6 /* ContentView.swift in Sources */,
 				1A2D20A42C107DD000F4D6E6 /* WBMessengerApp.swift in Sources */,
 				1A2D20B42C107FD400F4D6E6 /* ButtonView.swift in Sources */,

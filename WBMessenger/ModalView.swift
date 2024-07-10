@@ -11,17 +11,19 @@ struct ModalView: View {
     @Binding var showModal: Bool
     
     var body: some View {
-        VStack {
-            Spacer()
-            
-            ButtonView(buttonAction: {
-                showModal.toggle()
-            }, buttonText: "Закрыть окно")
-            .padding(.bottom, 20)
+        ZStack {
+            Color("BackgroundColor")
+                .edgesIgnoringSafeArea(.all)
+            VStack {
+                Spacer()
+                
+                ButtonView(buttonAction: {
+                    showModal.toggle()
+                }, buttonText: "Закрыть окно")
+                .padding(.bottom, 20)
+            }
+            .background(Color.clear)
         }
-        .padding(.leading, 40)
-        .padding(.trailing, 40)
-        .background(Color("BackgroundColor"))
     }
 }
 
