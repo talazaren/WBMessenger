@@ -17,22 +17,20 @@ struct ContactDetailsView: View {
                 .padding(.bottom, 20)
             
             Text(contact.fullname)
-                .font(.system(size: 24))
+                .font(.heading2())
                 .foregroundStyle(Color("TextColor"))
-                .fontWeight(.bold)
                 .frame(height: 24)
             
             Text(contact.phoneNumber)
-                .font(.system(size: 16))
+                .font(.subheading2())
                 .foregroundStyle(Color("GreyColor"))
-                .fontWeight(.semibold)
                 .frame(height: 20)
             
             SocialMediaLinksView(contact: contact)
                 .padding(.top, 40)
         }
         .padding(.top, 46)
-        .padding([.leading, .trailing], 100)
+        .padding(.horizontal, 100)
         .background(Color("BackgroundColor"))
         .navigationBarBackButtonHidden(true)
         .toolbar {
@@ -47,7 +45,7 @@ struct ContactDetailsView: View {
                             .frame(width: 24, height: 24)
                             .foregroundStyle(Color("TextColor"))
                         Text("Profile")
-                            .font(.system(size: 18, weight: .semibold))
+                            .font(.subheading1())
                             .foregroundStyle(Color("TextColor"))
                     }
                 }

@@ -16,15 +16,13 @@ struct ContactRowView: View {
                 
             VStack(alignment: .leading, spacing: 2) {
                 Text(contact.fullname)
-                    .font(.system(size: 14))
+                    .font(.bodyText1())
                     .foregroundStyle(Color("TextColor"))
-                    .fontWeight(.bold)
                     .frame(height: 24)
                         
                 Text(contact.onlineStatusMessage)
-                    .font(.system(size: 12))
+                    .font(.metadata1())
                     .foregroundStyle(Color("GreyColor"))
-                    .fontWeight(.semibold)
                     .frame(height: 20)
                     
                 Spacer()
@@ -82,7 +80,7 @@ struct AvatarView: View {
                     .overlay(
                         Text(initials)
                             .foregroundColor(.white)
-                            .font(.system(size: 14, weight: .bold))
+                            .font(.bodyText1())
                     )
             )
         }
