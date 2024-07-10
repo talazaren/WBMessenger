@@ -50,7 +50,7 @@ struct ContactsView: View {
             .background(Color("BackgroundColor"))
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
-                    Text("Контакты")
+                    Text("Contacts")
                         .font(.headline)
                         .foregroundStyle(Color("TextColor"))
                         .padding(.leading, 8)

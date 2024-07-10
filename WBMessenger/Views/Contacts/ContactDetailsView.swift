@@ -46,7 +46,7 @@ struct ContactDetailsView: View {
                             .resizable()
                             .frame(width: 24, height: 24)
                             .foregroundStyle(Color("TextColor"))
-                        Text("Профиль")
+                        Text("Profile")
                             .font(.system(size: 18, weight: .semibold))
                             .foregroundStyle(Color("TextColor"))
                     }

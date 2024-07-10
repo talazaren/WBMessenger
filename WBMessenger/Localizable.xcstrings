@@ -31,8 +31,25 @@
         }
       }
     },
+    "Contacts" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Контакты"
+          }
+        }
+      }
+    },
     "Hello!" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Привет!"
+          }
+        }
+      }
     },
     "Privacy Policy" : {
       "localizations" : {
@@ -44,8 +61,25 @@
         }
       }
     },
+    "Profile" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Профиль"
+          }
+        }
+      }
+    },
     "Search" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Поиск"
+          }
+        }
+      }
     },
     "Start to chat" : {
       "extractionState" : "manual",
@@ -54,17 +88,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Начать общаться"
-          }
-        }
-      }
-    },
-    "Terms of use" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Условиями Использования"
           }
         }
       }
@@ -80,13 +103,14 @@
       }
     },
     "World!" : {
-
-    },
-    "Контакты" : {
-
-    },
-    "Профиль" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Мир!"
+          }
+        }
+      }
     }
   },
   "version" : "1.0"
