@@ -118,8 +118,8 @@
 				1ADBEE812C231ADC009F7A81 /* Contacts */,
 				1ADBEE822C231B49009F7A81 /* CustomViews */,
 				1A5CBF6E2C3EAB170073BA02 /* Onboarding */,
-				1ABA28722C1F3C1F00A912F2 /* ChatsView.swift */,
-				1ABA28742C1F3C3A00A912F2 /* SettingsView.swift */,
+				1A5CBF742C40850A0073BA02 /* Chats */,
+				1A5CBF752C4085160073BA02 /* Settings */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -164,6 +164,22 @@
 				1A5CBF702C3EADBB0073BA02 /* InputPhoneNumberView.swift */,
 			);
 			path = Authorization;
+			sourceTree = "<group>";
+		};
+		1A5CBF742C40850A0073BA02 /* Chats */ = {
+			isa = PBXGroup;
+			children = (
+				1ABA28722C1F3C1F00A912F2 /* ChatsView.swift */,
+			);
+			path = Chats;
+			sourceTree = "<group>";
+		};
+		1A5CBF752C4085160073BA02 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				1ABA28742C1F3C3A00A912F2 /* SettingsView.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		1ADBEE742C21AB09009F7A81 /* Extensions */ = {

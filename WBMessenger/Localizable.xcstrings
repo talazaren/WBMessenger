@@ -1,6 +1,9 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "" : {
+
+    },
     "and" : {
       "localizations" : {
         "ru" : {
@@ -41,7 +44,18 @@
         }
       }
     },
+    "Enter your phone number" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Введите номер телефона"
+          }
+        }
+      }
+    },
     "Hello, World!" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ru" : {
           "stringUnit" : {
@@ -108,6 +122,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Условиями Использования"
+          }
+        }
+      }
+    },
+    "We will send a confirmation code\nto the specified number" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Мы вышлем код подтверждения на указаный номер"
           }
         }
       }

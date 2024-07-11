@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct InputPhoneNumberView: View {
+    @EnvironmentObject var router: Router
     @State private var phoneNumber: String = ""
     @State private var selectedCountryCode: CountryCode = CountryCode.countryCodes.first!
 
@@ -78,6 +79,9 @@ struct InputPhoneNumberView: View {
                 }, buttonText: "Continue")
                 .opacity(isButtonActive ? 1 : 0.5)
 
+            }
+            .onTapGesture {
+                hideKeyboard()
             }
         }
 }
