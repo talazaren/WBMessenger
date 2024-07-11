@@ -9,6 +9,7 @@ import SwiftUI
 
 struct InputPhoneNumberView: View {
     @EnvironmentObject var router: Router
+    
     @State private var phoneNumber: String = ""
     @State private var selectedCountryCode: CountryCode = CountryCode.countryCodes.first!
 
@@ -30,47 +31,7 @@ struct InputPhoneNumberView: View {
                     .lineSpacing(8)
                     .padding(.top, 8)
 
-                HStack {
-                    Menu {
-                        Picker("", selection: $selectedCountryCode) {
-                            ForEach(CountryCode.countryCodes, id: \.self) { country in
-                                HStack {
-                                    Text(country.code)
-                                        .font(.bodyText1())
-                                    Image(country.country)
-                                        .resizable()
-                                        .frame(width: 16, height: 16)
-                                }.tag(country)
-                            }
-                        }
-                    } label: {
-                        HStack {
-                            Image(selectedCountryCode.country)
-                                .resizable()
-                                .scaledToFill()
-                                .frame(width: 16, height: 16)
-                                .clipShape(RoundedRectangle(cornerRadius: 4))
-                                .padding(.leading, 8)
-                            Text(selectedCountryCode.code)
-                                .font(.bodyText1())
-                                .foregroundStyle(Color("GreyColor"))
-                                .padding(.trailing, 8)
-                        }
-                        .frame(height: 36)
-                        .background(Color("InputColor"))
-                        .clipShape(RoundedRectangle(cornerRadius: 4))
-                    }
-                    
-                    TextField(selectedCountryCode.phoneFormat, text: $phoneNumber)
-                        .keyboardType(.numberPad)
-                        .frame(height: 36)
-                        .font(.bodyText1())
-                        .foregroundStyle(Color("GreyColor"))
-                        .background(Color("InputColor"))
-                        .clipShape(RoundedRectangle(cornerRadius: 4))
-                }
-                .padding(.horizontal, 24)
-                .padding(.top, 50)
+                inputPhoneNumber
                 
                 Spacer()
 
@@ -78,12 +39,59 @@ struct InputPhoneNumberView: View {
                     
                 }, buttonText: "Continue")
                 .opacity(isButtonActive ? 1 : 0.5)
+                .padding(.bottom, 20)
 
             }
             .onTapGesture {
                 hideKeyboard()
             }
         }
+}
+
+extension InputPhoneNumberView {
+    private var inputPhoneNumber: some View {
+        HStack {
+            Menu {
+                Picker("", selection: $selectedCountryCode) {
+                    ForEach(CountryCode.countryCodes, id: \.self) { country in
+                        HStack {
+                            Text(country.code)
+                                .font(.bodyText1())
+                            Image(country.country)
+                                .resizable()
+                                .frame(width: 16, height: 16)
+                        }.tag(country)
+                    }
+                }
+            } label: {
+                HStack {
+                    Image(selectedCountryCode.country)
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 16, height: 16)
+                        .clipShape(RoundedRectangle(cornerRadius: 4))
+                        .padding(.leading, 8)
+                    Text(selectedCountryCode.code)
+                        .font(.bodyText1())
+                        .foregroundStyle(Color("GreyColor"))
+                        .padding(.trailing, 8)
+                }
+                .frame(height: 36)
+                .background(Color("InputColor"))
+                .clipShape(RoundedRectangle(cornerRadius: 4))
+            }
+            
+            TextField(selectedCountryCode.phoneFormat, text: $phoneNumber)
+                .keyboardType(.numberPad)
+                .frame(height: 36)
+                .font(.bodyText1())
+                .foregroundStyle(Color("GreyColor"))
+                .background(Color("InputColor"))
+                .clipShape(RoundedRectangle(cornerRadius: 4))
+        }
+        .padding(.horizontal, 24)
+        .padding(.top, 50)
+    }
 }
 
 
