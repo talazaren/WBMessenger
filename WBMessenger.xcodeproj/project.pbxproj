@@ -22,6 +22,8 @@
 		1A2D20C92C1F1DDC00F4D6E6 /* ContentTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2D20C82C1F1DDC00F4D6E6 /* ContentTabView.swift */; };
 		1A5CBF6A2C3E83470073BA02 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 1A5CBF692C3E83470073BA02 /* Localizable.xcstrings */; };
 		1A5CBF6D2C3E8D520073BA02 /* Font +.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5CBF6C2C3E8D520073BA02 /* Font +.swift */; };
+		1A5CBF712C3EADBB0073BA02 /* InputPhoneNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5CBF702C3EADBB0073BA02 /* InputPhoneNumberView.swift */; };
+		1A5CBF732C3EAF4E0073BA02 /* CountryCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5CBF722C3EAF4E0073BA02 /* CountryCode.swift */; };
 		1ABA28732C1F3C1F00A912F2 /* ChatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABA28722C1F3C1F00A912F2 /* ChatsView.swift */; };
 		1ABA28752C1F3C3A00A912F2 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABA28742C1F3C3A00A912F2 /* SettingsView.swift */; };
 		1ADBEE732C21AAB4009F7A81 /* Date +.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ADBEE722C21AAB4009F7A81 /* Date +.swift */; };
@@ -47,6 +49,8 @@
 		1A2D20C82C1F1DDC00F4D6E6 /* ContentTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentTabView.swift; sourceTree = "<group>"; };
 		1A5CBF692C3E83470073BA02 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		1A5CBF6C2C3E8D520073BA02 /* Font +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font +.swift"; sourceTree = "<group>"; };
+		1A5CBF702C3EADBB0073BA02 /* InputPhoneNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputPhoneNumberView.swift; sourceTree = "<group>"; };
+		1A5CBF722C3EAF4E0073BA02 /* CountryCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryCode.swift; sourceTree = "<group>"; };
 		1ABA28722C1F3C1F00A912F2 /* ChatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsView.swift; sourceTree = "<group>"; };
 		1ABA28742C1F3C3A00A912F2 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		1ADBEE722C21AAB4009F7A81 /* Date +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date +.swift"; sourceTree = "<group>"; };
@@ -110,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				1A2D20A52C107DD000F4D6E6 /* ContentView.swift */,
+				1A5CBF6F2C3EAD7E0073BA02 /* Authorization */,
 				1ADBEE812C231ADC009F7A81 /* Contacts */,
 				1ADBEE822C231B49009F7A81 /* CustomViews */,
 				1A5CBF6E2C3EAB170073BA02 /* Onboarding */,
@@ -131,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				1A2D20BD2C1F193E00F4D6E6 /* Contact.swift */,
+				1A5CBF722C3EAF4E0073BA02 /* CountryCode.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -150,6 +156,14 @@
 				1A2D20B12C107E6B00F4D6E6 /* WalkthroughView.swift */,
 			);
 			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		1A5CBF6F2C3EAD7E0073BA02 /* Authorization */ = {
+			isa = PBXGroup;
+			children = (
+				1A5CBF702C3EADBB0073BA02 /* InputPhoneNumberView.swift */,
+			);
+			path = Authorization;
 			sourceTree = "<group>";
 		};
 		1ADBEE742C21AB09009F7A81 /* Extensions */ = {
@@ -257,8 +271,10 @@
 				1ABA28732C1F3C1F00A912F2 /* ChatsView.swift in Sources */,
 				1A2D20C32C1F198C00F4D6E6 /* ContactDetailsView.swift in Sources */,
 				1A5CBF6D2C3E8D520073BA02 /* Font +.swift in Sources */,
+				1A5CBF732C3EAF4E0073BA02 /* CountryCode.swift in Sources */,
 				1A2D20A62C107DD000F4D6E6 /* ContentView.swift in Sources */,
 				1A2D20A42C107DD000F4D6E6 /* WBMessengerApp.swift in Sources */,
+				1A5CBF712C3EADBB0073BA02 /* InputPhoneNumberView.swift in Sources */,
 				1ADBEE7A2C2202D6009F7A81 /* SearchBarView.swift in Sources */,
 				1ADBEE762C21BAFD009F7A81 /* ContactRowView.swift in Sources */,
 				1A2D20C02C1F195900F4D6E6 /* Contacts.swift in Sources */,
