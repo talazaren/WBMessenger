@@ -9,11 +9,11 @@ import SwiftUI
 
 struct ButtonView: View {
     let buttonAction: () -> Void
-    let buttonText: String
+    let buttonText: Text
     
     var body: some View {
         Button(action: buttonAction) {
-            Text(buttonText)
+            buttonText
                 .font(.subheading2())
                 .frame(width: 327, height: 52)
                 .background(Color("AccentColor"))
@@ -24,5 +24,5 @@ struct ButtonView: View {
 }
 
 #Preview {
-    ButtonView(buttonAction: {}, buttonText: "Начать общаться")
+    ButtonView(buttonAction: {}, buttonText: Text("Начать общаться"))
 }

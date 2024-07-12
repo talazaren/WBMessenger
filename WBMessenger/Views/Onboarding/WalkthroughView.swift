@@ -11,6 +11,8 @@ struct WalkthroughView: View {
     @EnvironmentObject var router: Router
     @State var showModal = false
     
+    let dynamicButtonTitle = "Start chatting"
+    
     var body: some View {
         ZStack {
             Color("BackgroundColor")
@@ -51,7 +53,7 @@ struct WalkthroughView: View {
                 
                 ButtonView(buttonAction: {
                     router.navigateTo(.authorization)
-                }, buttonText: "Start chatting")
+                }, buttonText: Text(LocalizedStringKey(dynamicButtonTitle)))
                 .padding(.bottom, 20)
             }
             .background(Color.clear)

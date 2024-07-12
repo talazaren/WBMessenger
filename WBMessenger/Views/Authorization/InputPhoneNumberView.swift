@@ -15,6 +15,8 @@ struct InputPhoneNumberView: View {
 
     private var isButtonActive = false
     
+    let dynamicButtonTitle = "Continue"
+    
         var body: some View {
             VStack {
                 Text("Enter your phone number")
@@ -37,7 +39,7 @@ struct InputPhoneNumberView: View {
 
                 ButtonView(buttonAction: {
                     
-                }, buttonText: "Continue")
+                }, buttonText: Text(LocalizedStringKey(dynamicButtonTitle)))
                 .opacity(isButtonActive ? 1 : 0.5)
                 .padding(.bottom, 20)
 

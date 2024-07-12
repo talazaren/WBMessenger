@@ -44,23 +44,23 @@
         }
       }
     },
+    "Continue" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Продолжить"
+          }
+        }
+      }
+    },
     "Enter your phone number" : {
       "localizations" : {
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Введите номер телефона"
-          }
-        }
-      }
-    },
-    "Hello, World!" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Привет, мир!"
           }
         }
       }
@@ -105,7 +105,7 @@
         }
       }
     },
-    "Start to chat" : {
+    "Start chatting" : {
       "extractionState" : "manual",
       "localizations" : {
         "ru" : {
@@ -145,6 +145,9 @@
           }
         }
       }
+    },
+    "Начать общаться" : {
+
     }
   },
   "version" : "1.0"

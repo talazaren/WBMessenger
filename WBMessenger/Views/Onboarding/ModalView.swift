@@ -10,6 +10,8 @@ import SwiftUI
 struct ModalView: View {
     @Binding var showModal: Bool
     
+    let dynamicButtonTitle = "Close"
+    
     var body: some View {
         ZStack {
             Color("BackgroundColor")
@@ -19,7 +21,7 @@ struct ModalView: View {
                 
                 ButtonView(buttonAction: {
                     showModal.toggle()
-                }, buttonText: "Закрыть окно")
+                }, buttonText: Text(LocalizedStringKey(dynamicButtonTitle)))
                 .padding(.bottom, 20)
             }
             .background(Color.clear)

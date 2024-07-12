@@ -90,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				1A2D20A32C107DD000F4D6E6 /* WBMessengerApp.swift */,
+				1A5CBF762C4128390073BA02 /* Localization */,
 				1ADBEE742C21AB09009F7A81 /* Extensions */,
 				1A2D20C12C1F196100F4D6E6 /* Views */,
 				1A2D20C52C1F19B600F4D6E6 /* Models */,
@@ -97,7 +98,6 @@
 				1A2D20C42C1F19AA00F4D6E6 /* Services */,
 				1A2D20A72C107DD100F4D6E6 /* Assets.xcassets */,
 				1A2D20A92C107DD100F4D6E6 /* Preview Content */,
-				1A5CBF692C3E83470073BA02 /* Localizable.xcstrings */,
 			);
 			path = WBMessenger;
 			sourceTree = "<group>";
@@ -180,6 +180,14 @@
 				1ABA28742C1F3C3A00A912F2 /* SettingsView.swift */,
 			);
 			path = Settings;
+			sourceTree = "<group>";
+		};
+		1A5CBF762C4128390073BA02 /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				1A5CBF692C3E83470073BA02 /* Localizable.xcstrings */,
+			);
+			path = Localization;
 			sourceTree = "<group>";
 		};
 		1ADBEE742C21AB09009F7A81 /* Extensions */ = {
