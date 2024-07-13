@@ -12,7 +12,7 @@ struct ContentView: View {
     
     var body: some View {
         NavigationStack(path: $router.path) {
-            router.view(for: .walkthrough)
+            router.view(for: router.startScreen)
                 .navigationDestination(for: Route.self) { view in
                     router.view(for: view)
                 }

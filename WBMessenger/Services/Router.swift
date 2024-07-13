@@ -20,10 +20,24 @@ enum Route: Hashable {
 }
 
 final class Router: ObservableObject {
-    @Published var startScreen: Route = .main
+    @Published var startScreen: Route = .walkthrough
     @Published var selectedTabRoute: TabRoute = .contacts
     
     @Published var path = NavigationPath()
+    
+    @ViewBuilder func tabView(for route: TabRoute) -> some View {
+            switch route {
+            case .contacts:
+                ContactsView()
+                    .navigationBarBackButtonHidden()
+            case .chats:
+                ChatsView()
+                    .navigationBarBackButtonHidden()
+            case .settings:
+                SettingsView()
+                    .navigationBarBackButtonHidden()
+            }
+    }
     
     @ViewBuilder func view(for route: Route) -> some View {
             switch route {
@@ -34,8 +48,7 @@ final class Router: ObservableObject {
                 InputPhoneNumberView()
                     .navigationBarBackButtonHidden()
             case .main:
-                ContactsView()
-                    .navigationBarBackButtonHidden()
+                tabView(for: selectedTabRoute)
             }
     }
     

@@ -7,15 +7,24 @@
 
 import SwiftUI
 
+// Анимация применена к кнопке в случае, когда мы ввели недостаточное количество цифр
+
 struct InputPhoneNumberView: View {
     @EnvironmentObject var router: Router
     
     @State private var phoneNumber: String = ""
     @State private var selectedCountryCode: CountryCode = CountryCode.countryCodes.first!
-
-    private var isButtonActive = false
+    @State private var isAnimating = false
     
-    let dynamicButtonTitle = "Continue"
+    private let dynamicButtonTitle = "Continue"
+    
+    private var isEqual: Bool {
+        let numberCount = countDigits(in: selectedCountryCode.phoneFormat)
+        let inputNumberCount = phoneNumber.count
+        let result = numberCount == inputNumberCount
+        
+        return result
+    }
     
         var body: some View {
             VStack {
@@ -38,12 +47,34 @@ struct InputPhoneNumberView: View {
                 Spacer()
 
                 ButtonView(buttonAction: {
-                    
+                    withAnimation(.default) {
+                        buttonAction()
+                    } completion: {
+                        isAnimating = false
+                    }
                 }, buttonText: Text(LocalizedStringKey(dynamicButtonTitle)))
-                .opacity(isButtonActive ? 1 : 0.5)
+                .opacity(isEqual ? 1 : 0.5)
                 .padding(.bottom, 20)
+                .offset(x: isAnimating ? -10 : 0)
+                .animation(isAnimating ? .easeInOut(duration: 0.1).repeatCount(5) : .easeInOut(duration: 0.1).repeatCount(1), value: isAnimating)
 
             }
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button(action: {
+                        router.navigateBack()
+                    }) {
+                        HStack {
+                            Image("Back")
+                                .renderingMode(.template)
+                                .resizable()
+                                .frame(width: 24, height: 24)
+                                .foregroundStyle(Color("TextColor"))
+                        }
+                    }
+                }
+            }
+            .background(Color("BackgroundColor"))
             .onTapGesture {
                 hideKeyboard()
             }
@@ -93,6 +124,23 @@ extension InputPhoneNumberView {
         }
         .padding(.horizontal, 24)
         .padding(.top, 50)
+    }
+    
+    private func countDigits(in phoneFormat: String) -> Int {
+        let digitRegex = try! Regex("[0]")
+        let matches = phoneFormat.matches(of: digitRegex)
+            
+        return matches.count
+    }
+    
+    private func buttonAction() {
+        switch isEqual {
+        case true:
+            router.navigateTo(.main)
+        case false:
+            isAnimating.toggle()
+        }
+        
     }
 }
 
