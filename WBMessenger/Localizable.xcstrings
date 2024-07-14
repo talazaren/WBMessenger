@@ -31,12 +31,52 @@
         }
       }
     },
+    "Contacts" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Контакты"
+          }
+        }
+      }
+    },
+    "Hello!" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Привет!"
+          }
+        }
+      }
+    },
     "Privacy Policy" : {
       "localizations" : {
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Политикой Конфиденциальности"
+          }
+        }
+      }
+    },
+    "Profile" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Профиль"
+          }
+        }
+      }
+    },
+    "Search" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Поиск"
           }
         }
       }
@@ -52,8 +92,7 @@
         }
       }
     },
-    "Terms of use" : {
-      "extractionState" : "stale",
+    "Terms of Use" : {
       "localizations" : {
         "ru" : {
           "stringUnit" : {
@@ -63,12 +102,12 @@
         }
       }
     },
-    "Terms of Use" : {
+    "World!" : {
       "localizations" : {
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Условиями Использования"
+            "value" : "Мир!"
           }
         }
       }
