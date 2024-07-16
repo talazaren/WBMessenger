@@ -16,6 +16,7 @@ enum TabRoute: Hashable {
 enum Route: Hashable {
     case walkthrough
     case authorization
+    case verification(phoneNumber: String, code: CountryCode)
     case main
 }
 
@@ -49,6 +50,9 @@ final class Router: ObservableObject {
                     .navigationBarBackButtonHidden()
             case .main:
                 tabView(for: selectedTabRoute)
+            case .verification(let phoneNumber, let countryCode):
+                VerificationView(phoneNumber: phoneNumber, countryCode: countryCode)
+                    .navigationBarBackButtonHidden()
             }
     }
     

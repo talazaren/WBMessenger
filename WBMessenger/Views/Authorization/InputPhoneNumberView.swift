@@ -7,8 +7,6 @@
 
 import SwiftUI
 
-// Анимация применена к кнопке в случае, когда мы ввели недостаточное количество цифр
-
 struct InputPhoneNumberView: View {
     @EnvironmentObject var router: Router
     
@@ -136,7 +134,7 @@ extension InputPhoneNumberView {
     private func buttonAction() {
         switch isEqual {
         case true:
-            router.navigateTo(.main)
+            router.navigateTo(.verification(phoneNumber: phoneNumber, code: selectedCountryCode))
         case false:
             isAnimating.toggle()
         }

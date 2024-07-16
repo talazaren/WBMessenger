@@ -24,6 +24,50 @@
         }
       }
     },
+    "Code was sent to number\n %@ %@" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Code was sent to number\n %1$@ %2$@"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Отправили код на номер  %1$@ %2$@"
+          }
+        }
+      }
+    },
+    "Code was sent to number\n%@ %@" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Code was sent to number\n%1$@ %2$@"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Отправили код на номер %1$@ %2$@"
+          }
+        }
+      }
+    },
+    "Code was sent to number \n %@ %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Code was sent to number \n %1$@ %2$@"
+          }
+        }
+      }
+    },
     "Communicate with friends and family easily" : {
       "localizations" : {
         "ru" : {
@@ -51,6 +95,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Продолжить"
+          }
+        }
+      }
+    },
+    "Enter a code" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Введите код"
           }
         }
       }
