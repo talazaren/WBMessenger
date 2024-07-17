@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct VerificationView: View {
+    @EnvironmentObject var router: Router
     @ObservedObject var viewModel = VerificationViewModel()
+    
     @State var isCodeCorrect: Bool = false
     @State var inputCode: String = ""
     
@@ -21,6 +23,7 @@ struct VerificationView: View {
                 .font(.heading2())
                 .foregroundStyle(Color("TextColor"))
                 .padding(.bottom, 8)
+                .padding(.top, 80)
             
             Text("Code was sent to number \n \(countryCode.code) \(phoneNumber)")
                 .font(.bodyText2())
@@ -46,6 +49,23 @@ struct VerificationView: View {
         .onAppear(perform: {
             viewModel.generateCode()
         })
+        .toolbar {
+            ToolbarItem(placement: .navigationBarLeading) {
+                Button(action: {
+                    router.navigateBack()
+                }) {
+                    HStack {
+                        Image("Back")
+                            .renderingMode(.template)
+                            .resizable()
+                            .frame(width: 24, height: 24)
+                            .foregroundStyle(Color("TextColor"))
+                    }
+                }
+            }
+        }
+        .padding(.horizontal, 90)
+        .background(Color("BackgroundColor"))
     }
 }
 
