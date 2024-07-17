@@ -24,46 +24,18 @@
         }
       }
     },
-    "Code was sent to number\n %@ %@" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Code was sent to number\n %1$@ %2$@"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Отправили код на номер  %1$@ %2$@"
-          }
-        }
-      }
-    },
-    "Code was sent to number\n%@ %@" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Code was sent to number\n%1$@ %2$@"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Отправили код на номер %1$@ %2$@"
-          }
-        }
-      }
-    },
     "Code was sent to number \n %@ %@" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Code was sent to number \n %1$@ %2$@"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Отправили код на номер \n %1$@ %2$@"
           }
         }
       }
@@ -150,7 +122,14 @@
       }
     },
     "Request code again" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Запросить код повторно"
+          }
+        }
+      }
     },
     "Search" : {
       "localizations" : {
