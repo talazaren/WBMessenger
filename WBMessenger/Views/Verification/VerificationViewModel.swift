@@ -9,30 +9,22 @@ import Foundation
 import Combine
 
 final class VerificationViewModel: ObservableObject {
-    @Published var generatedCode: String = ""
-    @Published var isCodeCorrect: Bool = false
-    @Published var inputCode: String = "" {
-        didSet {
-            if inputCode.count == 4 {
-                if verifyCode(inputCode: inputCode) {
-                    isCodeCorrect = true
-                } else {
-                    inputCode = ""
-                }
-            }
-        }
-    }
+    @Published var generatedCode: String = "😇"
     
     private var codeSequence: CodeSequence
+    private var iterator: CodeIterator
     
     init() {
         codeSequence = CodeSequence(length: 4)
-        var iterator = codeSequence.makeIterator()
-        generatedCode = iterator.next() ?? ""
-        print("Generated Code (for testing): \(generatedCode)")
+        iterator = codeSequence.makeIterator()
     }
     
-    private func verifyCode(inputCode: String) -> Bool {
+    func generateCode() {
+        generatedCode = iterator.next() ?? "🫡"
+        print("Generated code: \(generatedCode)")
+    }
+    
+    func verifyCode(inputCode: String) -> Bool {
         return inputCode == generatedCode
     }
 }

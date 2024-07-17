@@ -8,13 +8,14 @@
 import SwiftUI
 
 struct InputCodeView: View {
-    @ObservedObject var viewModel = VerificationViewModel()
-    
+    @EnvironmentObject var router: Router
     @FocusState private var isFocused: Bool
+    
     @Binding var inputCode: String
+    @Binding var isCodeCorrect: Bool
     
     var body: some View {
-        VStack {
+        ZStack {
             HStack(spacing: 40) {
                 ForEach(0..<4) { index in
                     let isFilled = inputCode.count > index
@@ -30,7 +31,7 @@ struct InputCodeView: View {
             }
             .padding(.vertical, 50)
             
-            TextField("", text: $viewModel.inputCode)
+            TextField("", text: $inputCode)
                 .frame(width: 0, height: 0)
                 .opacity(0)
                 .multilineTextAlignment(.center)
@@ -40,6 +41,13 @@ struct InputCodeView: View {
                 .onAppear {
                     isFocused = true
                 }
+                .onChange(of: isCodeCorrect) {
+                    print(isCodeCorrect)
+                    if isCodeCorrect {
+                        router.navigateTo(.main)
+                    }
+                }
+                
         }
     }
     
