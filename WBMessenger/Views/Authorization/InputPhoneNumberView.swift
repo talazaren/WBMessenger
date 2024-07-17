@@ -115,10 +115,17 @@ extension InputPhoneNumberView {
             TextField(selectedCountryCode.phoneFormat, text: $phoneNumber)
                 .keyboardType(.numberPad)
                 .frame(height: 36)
+                .padding(.horizontal, 8)
                 .font(.bodyText1())
                 .foregroundStyle(Color("GreyColor"))
                 .background(Color("InputColor"))
                 .clipShape(RoundedRectangle(cornerRadius: 4))
+                .onChange(of: phoneNumber) { newValue, _ in
+                    let limit = countDigits(in: selectedCountryCode.phoneFormat)
+                    if newValue.count >= limit {
+                        phoneNumber = String(newValue.prefix(limit))
+                    }
+                }
         }
         .padding(.horizontal, 24)
         .padding(.top, 50)
