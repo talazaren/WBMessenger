@@ -14,6 +14,8 @@ struct InputCodeView: View {
     @Binding var inputCode: String
     @Binding var isCodeCorrect: Bool
     
+    var completion: (String) -> Bool
+    
     var body: some View {
         ZStack {
             HStack(spacing: 40) {
@@ -41,8 +43,16 @@ struct InputCodeView: View {
                 .onAppear {
                     isFocused = true
                 }
+                .onChange(of: inputCode) {
+                    if inputCode.count == 4 && completion(inputCode) {
+                        if completion(inputCode) {
+                            isCodeCorrect = true
+                        } else {
+                            inputCode = ""
+                        }
+                    }
+                }
                 .onChange(of: isCodeCorrect) {
-                    print(isCodeCorrect)
                     if isCodeCorrect {
                         router.navigateTo(.main)
                     }

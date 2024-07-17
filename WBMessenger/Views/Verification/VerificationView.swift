@@ -10,18 +10,7 @@ import SwiftUI
 struct VerificationView: View {
     @ObservedObject var viewModel = VerificationViewModel()
     @State var isCodeCorrect: Bool = false
-    @State var inputCode: String = "" {
-        didSet {
-            print(inputCode)
-            if inputCode.count == 4 {
-                if viewModel.verifyCode(inputCode: inputCode) {
-                    isCodeCorrect = true
-                } else {
-                    inputCode = ""
-                }
-            }
-        }
-    }
+    @State var inputCode: String = ""
     
     let phoneNumber: String
     let countryCode: CountryCode
@@ -41,7 +30,7 @@ struct VerificationView: View {
                 .lineSpacing(8)
                 .padding(.top, 8)
             
-            InputCodeView(inputCode: $inputCode, isCodeCorrect: $isCodeCorrect)
+            InputCodeView(inputCode: $inputCode, isCodeCorrect: $isCodeCorrect, completion: viewModel.verifyCode(inputCode:))
             
             Spacer()
             

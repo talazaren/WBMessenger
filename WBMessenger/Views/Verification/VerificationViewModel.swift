@@ -39,12 +39,8 @@ struct CodeSequence: Sequence {
 
 struct CodeIterator: IteratorProtocol {
     let length: Int
-    var isGenerated = false
     
     mutating func next() -> String? {
-        guard !isGenerated else { return nil }
-        isGenerated = true
-        
         var code = ""
         for _ in 0..<length {
             code += String(Int.random(in: 0...9))
