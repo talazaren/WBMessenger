@@ -24,6 +24,22 @@
         }
       }
     },
+    "Code was sent to number \n %@ %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Code was sent to number \n %1$@ %2$@"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Отправили код на номер \n %1$@ %2$@"
+          }
+        }
+      }
+    },
     "Communicate with friends and family easily" : {
       "localizations" : {
         "ru" : {
@@ -51,6 +67,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Продолжить"
+          }
+        }
+      }
+    },
+    "Enter a code" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Введите код"
           }
         }
       }
@@ -91,6 +117,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Профиль"
+          }
+        }
+      }
+    },
+    "Request code again" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Запросить код повторно"
           }
         }
       }
