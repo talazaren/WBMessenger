@@ -14,7 +14,7 @@ struct ContentTabView: View {
         ZStack(alignment: .bottom) {
             VStack(spacing: 0) {
                 Spacer()
-                switch router.selectedRoute {
+                switch router.selectedTabRoute {
                 case .contacts:
                     ContactsView()
                 case .chats:
@@ -52,18 +52,18 @@ struct CustomTabBarView: View {
         
 struct TabItemView: View {
     @EnvironmentObject var router: Router
-    let screen: Route
+    let screen: TabRoute
     let icon: String
     
     var body: some View {
         Button(action: {
-            router.selectedRoute = screen
+            router.selectedTabRoute = screen
         }, label: {
             Image(icon)
                 .renderingMode(.template)
                 .resizable()
                 .frame(width: 32, height: 32)
-                .foregroundStyle(router.selectedRoute == screen ? Color("ActiveColor") : Color("TextColor"))
+                .foregroundStyle(router.selectedTabRoute == screen ? Color("ActiveColor") : Color("TextColor"))
             }
         )
     }

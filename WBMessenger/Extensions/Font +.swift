@@ -28,7 +28,7 @@ extension Font {
         .system(size: size, weight: .semibold, design: .none)
     }
     
-    static func bodyText2(_ size: CGFloat = 16) -> Font {
+    static func bodyText2(_ size: CGFloat = 14) -> Font {
         .system(size: size, weight: .regular, design: .none)
     }
     

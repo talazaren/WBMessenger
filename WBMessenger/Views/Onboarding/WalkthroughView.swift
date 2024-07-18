@@ -8,7 +8,10 @@
 import SwiftUI
 
 struct WalkthroughView: View {
+    @EnvironmentObject var router: Router
     @State var showModal = false
+    
+    let dynamicButtonTitle = "Start chatting"
     
     var body: some View {
         ZStack {
@@ -48,11 +51,10 @@ struct WalkthroughView: View {
                 }
                 .padding(.bottom, 10)
                 
-                ButtonView(buttonAction: buttonAction, buttonText: "Start chatting")
-                    .sheet(isPresented: $showModal) {
-                        ModalView(showModal: $showModal)
-                    }
-                    .padding(.bottom, 20)
+                ButtonView(buttonAction: {
+                    router.navigateTo(.authorization)
+                }, buttonText: Text(LocalizedStringKey(dynamicButtonTitle)))
+                .padding(.bottom, 20)
             }
             .background(Color.clear)
         }

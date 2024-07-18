@@ -20,61 +20,59 @@ struct ContactsView: View {
     }
     
     var body: some View {
-        NavigationStack(path: $path) {
-            VStack {
-                SearchBarView(inputText: $inputText)
-                    .padding(.horizontal, 24)
-                    .padding(.top, 16)
-                
-                List(filteredContacts, id: \.self) { contact in
-                    ContactRowView(contact: contact)
-                        .listRowBackground(Color("BackgroundColor"))
-                        .listRowSeparatorTint(Color("InputColor"))
-                        .alignmentGuide(.listRowSeparatorLeading) { _ in 0 }
-                        .alignmentGuide(.listRowSeparatorTrailing) { separator in
-                            separator.width - 2
-                        }
-                        .padding(5)
-                        .onTapGesture {
-                            path.append(contact)
-                        }
-                }
-                .listStyle(.plain)
-                .navigationDestination(for: Contact.self) { contact in
-                    ContactDetailsView(contact: contact)
-                        .background(Color("BackgroundColor"))
-                    
-                }
-                
+        VStack {
+            SearchBarView(inputText: $inputText)
+                .padding(.horizontal, 24)
+                .padding(.top, 16)
+            
+            List(filteredContacts, id: \.self) { contact in
+                ContactRowView(contact: contact)
+                    .listRowBackground(Color("BackgroundColor"))
+                    .listRowSeparatorTint(Color("InputColor"))
+                    .alignmentGuide(.listRowSeparatorLeading) { _ in 0 }
+                    .alignmentGuide(.listRowSeparatorTrailing) { separator in
+                        separator.width - 2
+                    }
+                    .padding(5)
+                    .onTapGesture {
+                        path.append(contact)
+                    }
             }
-            .background(Color("BackgroundColor"))
-            .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
-                    Text("Contacts")
-                        .font(.headline)
+            .listStyle(.plain)
+            /*.navigationDestination(for: Contact.self) { contact in
+                ContactDetailsView(contact: contact)
+                    .background(Color("BackgroundColor"))
+            }*/
+            
+        }
+        .background(Color("BackgroundColor"))
+        .toolbar {
+            ToolbarItem(placement: .navigationBarLeading) {
+                Text("Contacts")
+                    .font(.headline)
+                    .foregroundStyle(Color("TextColor"))
+                    .padding(.leading, 8)
+                    .padding(.bottom, 13)
+            }
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button(action: {
+                        
+                }) {
+                    Image(systemName: "plus")
+                        .resizable()
+                        .frame(width: 14, height: 14)
                         .foregroundStyle(Color("TextColor"))
-                        .padding(.leading, 8)
+                        .padding(.trailing, 8)
                         .padding(.bottom, 13)
                 }
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Button(action: {
-                        
-                    }) {
-                        Image(systemName: "plus")
-                            .resizable()
-                            .frame(width: 14, height: 14)
-                            .foregroundStyle(Color("TextColor"))
-                            .padding(.trailing, 8)
-                            .padding(.bottom, 13)
-                    }
-                }
             }
-            .onTapGesture {
-                hideKeyboard()
-            }
+        }
+        .onTapGesture {
+            hideKeyboard()
         }
     }
 }
+
 #Preview {
     ContentView()
 }
