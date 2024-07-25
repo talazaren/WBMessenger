@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-extension Font {
+public extension Font {
     static func heading1(_ size: CGFloat = 32) -> Font {
         .system(size: size, weight: .bold, design: .none)
     }

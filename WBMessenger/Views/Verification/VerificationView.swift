@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import UISystem
 
 struct VerificationView: View {
     @EnvironmentObject var router: Router
@@ -51,17 +52,9 @@ struct VerificationView: View {
         })
         .toolbar {
             ToolbarItem(placement: .navigationBarLeading) {
-                Button(action: {
+                NavigationBackButton(action: {
                     router.navigateBack()
-                }) {
-                    HStack {
-                        Image("Back")
-                            .renderingMode(.template)
-                            .resizable()
-                            .frame(width: 24, height: 24)
-                            .foregroundStyle(Color("TextColor"))
-                    }
-                }
+                })
             }
         }
         .padding(.horizontal, 90)

@@ -112,6 +112,7 @@
       }
     },
     "Profile" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ru" : {
           "stringUnit" : {
@@ -181,9 +182,6 @@
           }
         }
       }
-    },
-    "Начать общаться" : {
-
     }
   },
   "version" : "1.0"

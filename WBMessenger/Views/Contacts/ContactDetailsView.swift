@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import UISystem
 
 struct ContactDetailsView: View {
     @Environment(\.dismiss) private var dismiss
@@ -35,20 +36,9 @@ struct ContactDetailsView: View {
         .navigationBarBackButtonHidden(true)
         .toolbar {
             ToolbarItem(placement: .navigationBarLeading) {
-                Button(action: {
+                NavigationBackButton(action: {
                     dismiss()
-                }) {
-                    HStack {
-                        Image("Back")
-                            .renderingMode(.template)
-                            .resizable()
-                            .frame(width: 24, height: 24)
-                            .foregroundStyle(Color("TextColor"))
-                        Text("Profile")
-                            .font(.subheading1())
-                            .foregroundStyle(Color("TextColor"))
-                    }
-                }
+                })
             }
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button(action: {
