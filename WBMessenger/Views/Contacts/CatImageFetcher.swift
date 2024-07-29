@@ -7,13 +7,13 @@
 
 import Foundation
 
-enum Link: String {
-    case url = "https://api.thecatapi.com/v1/images/search"
+enum ImageLink: String {
+    case imageUrl = "https://api.thecatapi.com/v1/images/search"
 }
 
 final class CatImageFetcher: ObservableObject {
-    func fetchCatImage(completion: @escaping (String?) -> Void) {
-        guard let url = URL(string: Link.url.rawValue) else {
+    func fetchCatImage(completion: @escaping (String?) -> Void) { 
+        guard let url = URL(string: ImageLink.imageUrl.rawValue) else {
             completion(nil)
             return
         }
@@ -28,11 +28,14 @@ final class CatImageFetcher: ObservableObject {
                 if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [[String: Any]],
                    let firstResult = json.first,
                    let imageUrlString = firstResult["url"] as? String {
+                    print("Fetched URL: \(imageUrlString)")
                     completion(imageUrlString)
                 } else {
+                    print("Failed to parse JSON or URL not found")
                     completion(nil)
                 }
             } catch {
+                print("Error parsing JSON: \(error.localizedDescription)")
                 completion(nil)
             }
         }

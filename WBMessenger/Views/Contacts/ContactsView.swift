@@ -10,6 +10,7 @@ import UISystem
 
 struct ContactsView: View {
     @EnvironmentObject var router: Router
+    @StateObject private var imageFetcher = CatImageFetcher()
     @State private var inputText = ""
     
     var contacts = Contacts.shared
@@ -39,7 +40,7 @@ struct ContactsView: View {
                     }
             }
             .onAppear {
-                contacts.loadCatImages()
+                loadCatImages()
             }
             .listStyle(.plain)
             
@@ -71,7 +72,15 @@ struct ContactsView: View {
         }
     }
     
-    
+    private func loadCatImages() {
+        for index in contacts.contacts.indices {
+            imageFetcher.fetchCatImage { url in
+                DispatchQueue.main.async {
+                    contacts.contacts[index].avatar = url
+                }
+            }
+        }
+    }
 }
 
 #Preview {

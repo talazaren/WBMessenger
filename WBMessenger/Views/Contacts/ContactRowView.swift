@@ -74,16 +74,22 @@ struct AvatarView: View {
                             .stroke(Color("BackgroundColor"), lineWidth: 2)
                         )
                 case .failure:
-                    Circle()
-                        .fill(Color.gray)
+                    RoundedRectangle(cornerRadius: 14)
+                        .fill(Color.white)
                         .frame(width: 48, height: 48)
+                        .overlay {
+                            Image(systemName: "person")
+                                .resizable()
+                                .frame(width: 25, height: 25)
+                                .foregroundStyle(Color.accentColor)
+                        }
                 @unknown default:
                     EmptyView()
                 }
             }
         } else {
             let nameInitials = contact.name.first
-            let surnameInitials = contact.surname?.first ?? Character("")
+            let surnameInitials = contact.surname?.first ?? Character(" ")
             let initials = "\(nameInitials ?? Character(""))\(surnameInitials)"
             
             RoundedRectangle(cornerRadius: 16)

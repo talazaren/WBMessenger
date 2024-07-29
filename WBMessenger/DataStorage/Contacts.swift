@@ -10,13 +10,11 @@ import SwiftUI
 final class Contacts {
     static let shared = Contacts()
     
-    @StateObject private var imageFetcher = CatImageFetcher()
-    
     var contacts: [Contact] = [
         Contact(
             name: "Анастасия",
             surname: "Иванова",
-            avatar: "Anastasia",
+            avatar: nil,
             phoneNumber: "+7 999 999-99-99",
             onlineStatus: Date(timeIntervalSinceNow: -30 * 3600),
             haveStories: false,
@@ -29,7 +27,7 @@ final class Contacts {
         Contact(
             name: "Петя",
             surname: nil,
-            avatar: "Peter",
+            avatar: nil,
             phoneNumber: "+7 999 999-99-99",
             onlineStatus: Date(timeIntervalSinceNow: -5),
             haveStories: false,
@@ -43,7 +41,7 @@ final class Contacts {
         Contact(
             name: "Маман",
             surname: nil,
-            avatar: "Mum",
+            avatar: nil,
             phoneNumber: "+7 999 999-99-99",
             onlineStatus: Date(timeIntervalSinceNow: -3 * 3600),
             haveStories: true,
@@ -55,7 +53,7 @@ final class Contacts {
         Contact(
             name: "Арбуз",
             surname: "Дыня",
-            avatar: "Arbuz",
+            avatar: nil,
             phoneNumber: "+7 999 999-99-99",
             onlineStatus: Date(timeIntervalSinceNow: -3),
             haveStories: false,
@@ -89,16 +87,7 @@ final class Contacts {
             ]
         )
     ]
-    
-    func loadCatImages() {
-        for index in contacts.indices {
-            imageFetcher.fetchCatImage { url in
-                DispatchQueue.main.async { [unowned self] in
-                    contacts[index].avatar = url
-                }
-            }
-        }
-    }
+
     
     private init() {}
 }
