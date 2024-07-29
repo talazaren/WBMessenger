@@ -35,6 +35,8 @@ struct ContactRowView: View {
 }
 
 struct AvatarView: View {
+    @StateObject private var imageFetcher = CatImageFetcher()
+    @State private var imageUrl: String? = nil
     let contact: Contact
     
     var body: some View {
@@ -42,8 +44,9 @@ struct AvatarView: View {
             contact.haveStories ? setStories() : nil
             setImage()
             contact.onlineStatusMessage == "Online" ? setStatus().position(x: 48, y: 6) : nil
-                
-            
+        }
+        .task {
+            await loadCatImage()
         }
         .frame(width: 56, height: 56)
     }
@@ -59,8 +62,8 @@ struct AvatarView: View {
     
     @ViewBuilder
     private func setImage() -> some View {
-        if let imageUrlString = contact.avatar, let imageUrl = URL(string: imageUrlString) {
-            AsyncImage(url: imageUrl) { phase in
+        if let imageUrl = imageUrl, let url = URL(string: imageUrl) {
+            AsyncImage(url: url) { phase in
                 switch phase {
                 case .empty:
                     ProgressView()
@@ -69,9 +72,10 @@ struct AvatarView: View {
                     image
                         .resizable()
                         .frame(width: 48, height: 48)
+                        .clipShape(RoundedRectangle(cornerRadius: 14))
                         .overlay(
                             RoundedRectangle(cornerRadius: 14)
-                            .stroke(Color("BackgroundColor"), lineWidth: 2)
+                                .stroke(Color("BackgroundColor"), lineWidth: 2)
                         )
                 case .failure:
                     RoundedRectangle(cornerRadius: 14)
@@ -88,20 +92,30 @@ struct AvatarView: View {
                 }
             }
         } else {
-            let nameInitials = contact.name.first
-            let surnameInitials = contact.surname?.first ?? Character(" ")
-            let initials = "\(nameInitials ?? Character(""))\(surnameInitials)"
+            let nameInitials = String(contact.name.prefix(1))
+            let surnameInitials = String(contact.surname?.prefix(1) ?? " ")
+            let initials = "\(nameInitials)\(surnameInitials)"
             
             RoundedRectangle(cornerRadius: 16)
                 .fill(Color("ActiveColor"))
                 .stroke(Color("BackgroundColor"), lineWidth: 2)
-                .frame(width: 48, height: 48)
+                .frame(width: 56, height: 56)
                 .overlay(
                     Text(initials)
                         .foregroundColor(.white)
                         .font(.bodyText1())
                 )
         }
+    }
+    private func loadCatImage() async {
+        let url = await withCheckedContinuation { continuation in
+            imageFetcher.fetchCatImage { url in
+                DispatchQueue.main.async {
+                    continuation.resume(returning: url ?? "")
+                }
+            }
+        }
+        self.imageUrl = url
     }
     
     private func setStatus() -> some View {
@@ -115,17 +129,4 @@ struct AvatarView: View {
 #Preview {
     ContactRowView(contact: Contact(name: "Anne", surname: "Das", avatar: "Arbuz", phoneNumber: "+456", onlineStatus: .now, haveStories: true, socialMediaLinks: [SocialMedia(name: .facebook, link: "fgg", image: "fff")]))
 }
-
-
-/*if let image = contact.avatar {
-    return AnyView(
-        Image(image)
-        .resizable()
-        .frame(width: 48, height: 48)
-        .overlay(
-            RoundedRectangle(cornerRadius: 14)
-            .stroke(Color("BackgroundColor"), lineWidth: 2)
-        )
-    )
-}*/
 
