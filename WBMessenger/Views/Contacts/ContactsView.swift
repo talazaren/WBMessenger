@@ -12,10 +12,10 @@ struct ContactsView: View {
     @EnvironmentObject var router: Router
     @State private var inputText = ""
     
-    let contacts = Contacts.shared.contacts
+    var contacts = Contacts.shared
     
     var filteredContacts: [Contact] {
-        inputText.isEmpty ? contacts : contacts.filter { $0.fullname.lowercased().contains(inputText.lowercased())
+        inputText.isEmpty ? contacts.contacts : contacts.contacts.filter { $0.fullname.lowercased().contains(inputText.lowercased())
         }
     }
     
@@ -37,6 +37,9 @@ struct ContactsView: View {
                     .onTapGesture {
                         router.navigateTo(.contactDetails(contact: contact))
                     }
+            }
+            .onAppear {
+                contacts.loadCatImages()
             }
             .listStyle(.plain)
             
@@ -67,6 +70,8 @@ struct ContactsView: View {
             hideKeyboard()
         }
     }
+    
+    
 }
 
 #Preview {

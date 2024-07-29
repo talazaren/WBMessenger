@@ -57,33 +57,44 @@ struct AvatarView: View {
             .frame(width: 56, height: 56)
     }
     
+    @ViewBuilder
     private func setImage() -> some View {
-        if let image = contact.avatar {
-            return AnyView(
-                Image(image)
-                .resizable()
-                .frame(width: 48, height: 48)
-                .overlay(
-                    RoundedRectangle(cornerRadius: 14)
-                    .stroke(Color("BackgroundColor"), lineWidth: 2)
-                )
-            )
+        if let imageUrlString = contact.avatar, let imageUrl = URL(string: imageUrlString) {
+            AsyncImage(url: imageUrl) { phase in
+                switch phase {
+                case .empty:
+                    ProgressView()
+                        .frame(width: 48, height: 48)
+                case .success(let image):
+                    image
+                        .resizable()
+                        .frame(width: 48, height: 48)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 14)
+                            .stroke(Color("BackgroundColor"), lineWidth: 2)
+                        )
+                case .failure:
+                    Circle()
+                        .fill(Color.gray)
+                        .frame(width: 48, height: 48)
+                @unknown default:
+                    EmptyView()
+                }
+            }
         } else {
             let nameInitials = contact.name.first
             let surnameInitials = contact.surname?.first ?? Character("")
             let initials = "\(nameInitials ?? Character(""))\(surnameInitials)"
             
-            return AnyView(
-                RoundedRectangle(cornerRadius: 16)
-                    .fill(Color("ActiveColor"))
-                    .stroke(Color("BackgroundColor"), lineWidth: 2)
-                    .frame(width: 48, height: 48)
-                    .overlay(
-                        Text(initials)
-                            .foregroundColor(.white)
-                            .font(.bodyText1())
-                    )
-            )
+            RoundedRectangle(cornerRadius: 16)
+                .fill(Color("ActiveColor"))
+                .stroke(Color("BackgroundColor"), lineWidth: 2)
+                .frame(width: 48, height: 48)
+                .overlay(
+                    Text(initials)
+                        .foregroundColor(.white)
+                        .font(.bodyText1())
+                )
         }
     }
     
@@ -100,4 +111,15 @@ struct AvatarView: View {
 }
 
 
+/*if let image = contact.avatar {
+    return AnyView(
+        Image(image)
+        .resizable()
+        .frame(width: 48, height: 48)
+        .overlay(
+            RoundedRectangle(cornerRadius: 14)
+            .stroke(Color("BackgroundColor"), lineWidth: 2)
+        )
+    )
+}*/
 

@@ -5,12 +5,14 @@
 //  Created by Tatiana Lazarenko on 6/16/24.
 //
 
-import Foundation
+import SwiftUI
 
 final class Contacts {
     static let shared = Contacts()
     
-    let contacts: [Contact] = [
+    @StateObject private var imageFetcher = CatImageFetcher()
+    
+    var contacts: [Contact] = [
         Contact(
             name: "Анастасия",
             surname: "Иванова",
@@ -87,6 +89,16 @@ final class Contacts {
             ]
         )
     ]
+    
+    func loadCatImages() {
+        for index in contacts.indices {
+            imageFetcher.fetchCatImage { url in
+                DispatchQueue.main.async { [unowned self] in
+                    contacts[index].avatar = url
+                }
+            }
+        }
+    }
     
     private init() {}
 }

@@ -27,6 +27,7 @@
 		1A5CBF7F2C46B9A60073BA02 /* InputCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5CBF7E2C46B9A60073BA02 /* InputCodeView.swift */; };
 		1A5CBF812C46D2C80073BA02 /* String +.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5CBF802C46D2C80073BA02 /* String +.swift */; };
 		1A5CBFC72C52867B0073BA02 /* UISystem in Frameworks */ = {isa = PBXBuildFile; productRef = 1A5CBFC62C52867B0073BA02 /* UISystem */; };
+		1A67254B2C57CD7E004B3730 /* CatImageFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A67254A2C57CD7E004B3730 /* CatImageFetcher.swift */; };
 		1ABA28732C1F3C1F00A912F2 /* ChatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABA28722C1F3C1F00A912F2 /* ChatsView.swift */; };
 		1ABA28752C1F3C3A00A912F2 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABA28742C1F3C3A00A912F2 /* SettingsView.swift */; };
 		1ADBEE732C21AAB4009F7A81 /* Date +.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ADBEE722C21AAB4009F7A81 /* Date +.swift */; };
@@ -56,6 +57,7 @@
 		1A5CBF7E2C46B9A60073BA02 /* InputCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputCodeView.swift; sourceTree = "<group>"; };
 		1A5CBF802C46D2C80073BA02 /* String +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String +.swift"; sourceTree = "<group>"; };
 		1A5CBFC42C5285000073BA02 /* UISystem */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = UISystem; path = Modules/UISystem; sourceTree = SOURCE_ROOT; };
+		1A67254A2C57CD7E004B3730 /* CatImageFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatImageFetcher.swift; sourceTree = "<group>"; };
 		1ABA28722C1F3C1F00A912F2 /* ChatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsView.swift; sourceTree = "<group>"; };
 		1ABA28742C1F3C3A00A912F2 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		1ADBEE722C21AAB4009F7A81 /* Date +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date +.swift"; sourceTree = "<group>"; };
@@ -231,6 +233,7 @@
 				1A2D20C22C1F198C00F4D6E6 /* ContactDetailsView.swift */,
 				1ADBEE752C21BAFD009F7A81 /* ContactRowView.swift */,
 				1A2D20C82C1F1DDC00F4D6E6 /* CustomTabBarView.swift */,
+				1A67254A2C57CD7E004B3730 /* CatImageFetcher.swift */,
 			);
 			path = Contacts;
 			sourceTree = "<group>";
@@ -317,6 +320,7 @@
 				1A2D20A42C107DD000F4D6E6 /* WBMessengerApp.swift in Sources */,
 				1A5CBF712C3EADBB0073BA02 /* InputPhoneNumberView.swift in Sources */,
 				1ADBEE762C21BAFD009F7A81 /* ContactRowView.swift in Sources */,
+				1A67254B2C57CD7E004B3730 /* CatImageFetcher.swift in Sources */,
 				1A5CBF7F2C46B9A60073BA02 /* InputCodeView.swift in Sources */,
 				1A2D20C02C1F195900F4D6E6 /* Contacts.swift in Sources */,
 				1A5CBF812C46D2C80073BA02 /* String +.swift in Sources */,

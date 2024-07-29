@@ -11,7 +11,7 @@ struct Contact: Identifiable, Hashable {
     let id = UUID()
     let name: String
     let surname: String?
-    let avatar: String?
+    var avatar: String?
     let phoneNumber: String
     let onlineStatus: Date
     let haveStories: Bool
