@@ -133,6 +133,7 @@
       }
     },
     "Search" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ru" : {
           "stringUnit" : {
