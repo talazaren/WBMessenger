@@ -23,7 +23,7 @@ struct ContactsView: View {
         VStack {
             SearchBarView(inputText: $inputText)
                 .padding(.horizontal, 24)
-                .padding(.top, 16)
+                .padding(.top, 106)
             
             List(filteredContacts, id: \.self) { contact in
                 ContactRowView(contact: contact)

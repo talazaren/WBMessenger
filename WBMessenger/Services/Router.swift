@@ -28,17 +28,26 @@ final class Router: ObservableObject {
     @Published var path = NavigationPath()
     
     @ViewBuilder func tabView(for route: TabRoute) -> some View {
-            switch route {
-            case .contacts:
-                ContactsView()
-                    .navigationBarBackButtonHidden()
-            case .chats:
-                ChatsView()
-                    .navigationBarBackButtonHidden()
-            case .settings:
-                SettingsView()
-                    .navigationBarBackButtonHidden()
+        ZStack(alignment: .bottom) {
+            VStack(spacing: 0) {
+                Spacer()
+                switch selectedTabRoute {
+                case .contacts:
+                    ContactsView()
+                        .navigationBarBackButtonHidden()
+                case .chats:
+                    ChatsView()
+                        .navigationBarBackButtonHidden()
+                case .settings:
+                    SettingsView()
+                        .navigationBarBackButtonHidden()
+                }
+                Spacer()
             }
+            
+            CustomTabBarView()
+        }
+        .ignoresSafeArea()
     }
     
     @ViewBuilder func view(for route: Route) -> some View {
