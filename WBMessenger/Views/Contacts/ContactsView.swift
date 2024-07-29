@@ -10,7 +10,6 @@ import UISystem
 
 struct ContactsView: View {
     @EnvironmentObject var router: Router
-    @State var path = [Contact]()
     @State private var inputText = ""
     
     let contacts = Contacts.shared.contacts
@@ -36,14 +35,10 @@ struct ContactsView: View {
                     }
                     .padding(5)
                     .onTapGesture {
-                        path.append(contact)
+                        router.navigateTo(.contactDetails(contact: contact))
                     }
             }
             .listStyle(.plain)
-            /*.navigationDestination(for: Contact.self) { contact in
-                ContactDetailsView(contact: contact)
-                    .background(Color("BackgroundColor"))
-            }*/
             
         }
         .background(Color("BackgroundColor"))

@@ -18,6 +18,7 @@ enum Route: Hashable {
     case authorization
     case verification(phoneNumber: String, code: CountryCode)
     case main
+    case contactDetails(contact: Contact)
 }
 
 final class Router: ObservableObject {
@@ -53,6 +54,8 @@ final class Router: ObservableObject {
             case .verification(let phoneNumber, let countryCode):
                 VerificationView(phoneNumber: phoneNumber, countryCode: countryCode)
                     .navigationBarBackButtonHidden()
+            case .contactDetails(let contact):
+                ContactDetailsView(contact: contact)
             }
     }
     
