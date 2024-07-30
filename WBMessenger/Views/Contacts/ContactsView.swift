@@ -10,13 +10,12 @@ import UISystem
 
 struct ContactsView: View {
     @EnvironmentObject var router: Router
-    @State var path = [Contact]()
     @State private var inputText = ""
     
-    let contacts = Contacts.shared.contacts
+    var contacts = Contacts.shared
     
     var filteredContacts: [Contact] {
-        inputText.isEmpty ? contacts : contacts.filter { $0.fullname.lowercased().contains(inputText.lowercased())
+        inputText.isEmpty ? contacts.contacts : contacts.contacts.filter { $0.fullname.lowercased().contains(inputText.lowercased())
         }
     }
     
@@ -24,7 +23,7 @@ struct ContactsView: View {
         VStack {
             SearchBarView(inputText: $inputText)
                 .padding(.horizontal, 24)
-                .padding(.top, 16)
+                .padding(.top, 106)
             
             List(filteredContacts, id: \.self) { contact in
                 ContactRowView(contact: contact)
@@ -36,14 +35,10 @@ struct ContactsView: View {
                     }
                     .padding(5)
                     .onTapGesture {
-                        path.append(contact)
+                        router.navigateTo(.contactDetails(contact: contact))
                     }
             }
             .listStyle(.plain)
-            /*.navigationDestination(for: Contact.self) { contact in
-                ContactDetailsView(contact: contact)
-                    .background(Color("BackgroundColor"))
-            }*/
             
         }
         .background(Color("BackgroundColor"))

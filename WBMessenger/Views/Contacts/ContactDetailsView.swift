@@ -60,11 +60,25 @@ struct ProfileImageView: View {
     let contact: Contact
     
     var body: some View {
-        if let image = contact.avatar {
-            Image(image)
-                .resizable()
-                .frame(width: 200, height: 200)
-                .clipShape(Circle())
+        if let imageUrlString = contact.avatar, let imageUrl = URL(string: imageUrlString) {
+            AsyncImage(url: imageUrl) { phase in
+                switch phase {
+                case .empty:
+                    ProgressView()
+                        .frame(width: 48, height: 48)
+                case .success(let image):
+                    image
+                        .resizable()
+                        .frame(width: 200, height: 200)
+                        .clipShape(Circle())
+                case .failure:
+                    Circle()
+                        .fill(Color.gray)
+                        .frame(width: 48, height: 48)
+                @unknown default:
+                    EmptyView()
+                }
+            }
         } else {
             ZStack{
                 Circle()

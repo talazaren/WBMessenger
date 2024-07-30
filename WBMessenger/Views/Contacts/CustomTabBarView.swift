@@ -7,31 +7,7 @@
 
 import SwiftUI
 
-struct ContentTabView: View {
-    @EnvironmentObject var router: Router
-    
-    var body: some View {
-        ZStack(alignment: .bottom) {
-            VStack(spacing: 0) {
-                Spacer()
-                switch router.selectedTabRoute {
-                case .contacts:
-                    ContactsView()
-                case .chats:
-                    ChatsView()
-                case .settings:
-                    SettingsView()
-                }
-                Spacer()
-            }
-            CustomTabBarView()
-        }
-        .ignoresSafeArea(.container)
-    }
-}
-
 struct CustomTabBarView: View {
-    @EnvironmentObject var router: Router
     
     var body: some View {
         HStack {

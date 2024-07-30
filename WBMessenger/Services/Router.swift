@@ -18,6 +18,7 @@ enum Route: Hashable {
     case authorization
     case verification(phoneNumber: String, code: CountryCode)
     case main
+    case contactDetails(contact: Contact)
 }
 
 final class Router: ObservableObject {
@@ -27,17 +28,26 @@ final class Router: ObservableObject {
     @Published var path = NavigationPath()
     
     @ViewBuilder func tabView(for route: TabRoute) -> some View {
-            switch route {
-            case .contacts:
-                ContactsView()
-                    .navigationBarBackButtonHidden()
-            case .chats:
-                ChatsView()
-                    .navigationBarBackButtonHidden()
-            case .settings:
-                SettingsView()
-                    .navigationBarBackButtonHidden()
+        ZStack(alignment: .bottom) {
+            VStack(spacing: 0) {
+                Spacer()
+                switch selectedTabRoute {
+                case .contacts:
+                    ContactsView()
+                        .navigationBarBackButtonHidden()
+                case .chats:
+                    ChatsView()
+                        .navigationBarBackButtonHidden()
+                case .settings:
+                    SettingsView()
+                        .navigationBarBackButtonHidden()
+                }
+                Spacer()
             }
+            
+            CustomTabBarView()
+        }
+        .ignoresSafeArea()
     }
     
     @ViewBuilder func view(for route: Route) -> some View {
@@ -53,6 +63,8 @@ final class Router: ObservableObject {
             case .verification(let phoneNumber, let countryCode):
                 VerificationView(phoneNumber: phoneNumber, countryCode: countryCode)
                     .navigationBarBackButtonHidden()
+            case .contactDetails(let contact):
+                ContactDetailsView(contact: contact)
             }
     }
     
