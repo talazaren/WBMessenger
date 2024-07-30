@@ -10,7 +10,7 @@ import SwiftUI
 final class Contacts {
     static let shared = Contacts()
     
-    var contacts: [Contact] = [
+    let contacts: [Contact] = [
         Contact(
             name: "Анастасия",
             surname: "Иванова",
