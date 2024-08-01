@@ -54,6 +54,11 @@ final class System: ObservableObject {
         print("👤 Клиент \(client.id.uuidString.prefix(4)) добавлен")
     }
     
+    func removeClients() {
+        clients.removeAll()
+        print("👥 Все клиенты удалены. Можете начать заново")
+    }
+    
     // Распределяем задачи
     func distributeTasks(tasks: [SuperTask]) async {
         for (index, task) in tasks.enumerated() {
