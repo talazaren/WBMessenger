@@ -11,6 +11,7 @@
 		1A2D20A62C107DD000F4D6E6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2D20A52C107DD000F4D6E6 /* ContentView.swift */; };
 		1A2D20A82C107DD100F4D6E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A2D20A72C107DD100F4D6E6 /* Assets.xcassets */; };
 		1A2D20AB2C107DD100F4D6E6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A2D20AA2C107DD100F4D6E6 /* Preview Assets.xcassets */; };
+		1A67254F2C5BAF7E004B3730 /* DistributedSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A67254E2C5BAF7E004B3730 /* DistributedSystem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		1A2D20A52C107DD000F4D6E6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		1A2D20A72C107DD100F4D6E6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1A2D20AA2C107DD100F4D6E6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		1A67254E2C5BAF7E004B3730 /* DistributedSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistributedSystem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +54,7 @@
 			isa = PBXGroup;
 			children = (
 				1A2D20A32C107DD000F4D6E6 /* WBMessengerApp.swift */,
+				1A67254E2C5BAF7E004B3730 /* DistributedSystem.swift */,
 				1A2D20A52C107DD000F4D6E6 /* ContentView.swift */,
 				1A2D20A72C107DD100F4D6E6 /* Assets.xcassets */,
 				1A2D20A92C107DD100F4D6E6 /* Preview Content */,
@@ -139,6 +142,7 @@
 			files = (
 				1A2D20A62C107DD000F4D6E6 /* ContentView.swift in Sources */,
 				1A2D20A42C107DD000F4D6E6 /* WBMessengerApp.swift in Sources */,
+				1A67254F2C5BAF7E004B3730 /* DistributedSystem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
