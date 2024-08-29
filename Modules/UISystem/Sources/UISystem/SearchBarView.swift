@@ -7,10 +7,14 @@
 
 import SwiftUI
 
-struct SearchBarView: View {
+public struct SearchBarView: View {
     @Binding var inputText: String
     
-    var body: some View {
+    public init(inputText: Binding<String>) {
+        self._inputText = inputText
+    }
+    
+    public var body: some View {
         HStack {
             Image(systemName: "magnifyingglass")
                 .foregroundColor(Color("GreyColor"))

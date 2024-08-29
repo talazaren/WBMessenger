@@ -7,11 +7,16 @@
 
 import SwiftUI
 
-struct ButtonView: View {
+public struct ButtonView: View {
     let buttonAction: () -> Void
     let buttonText: Text
     
-    var body: some View {
+    public init(buttonAction: @escaping () -> Void, buttonText: Text) {
+        self.buttonAction = buttonAction
+        self.buttonText = buttonText
+    }
+    
+    public var body: some View {
         Button(action: buttonAction) {
             buttonText
                 .font(.subheading2())
@@ -23,6 +28,3 @@ struct ButtonView: View {
     }
 }
 
-#Preview {
-    ButtonView(buttonAction: {}, buttonText: Text("Начать общаться"))
-}

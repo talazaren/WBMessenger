@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import UISystem
 
 struct InputPhoneNumberView: View {
     @EnvironmentObject var router: Router
@@ -59,17 +60,9 @@ struct InputPhoneNumberView: View {
             }
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
-                    Button(action: {
+                    NavigationBackButton(action: {
                         router.navigateBack()
-                    }) {
-                        HStack {
-                            Image("Back")
-                                .renderingMode(.template)
-                                .resizable()
-                                .frame(width: 24, height: 24)
-                                .foregroundStyle(Color("TextColor"))
-                        }
-                    }
+                    })
                 }
             }
             .background(Color("BackgroundColor"))
